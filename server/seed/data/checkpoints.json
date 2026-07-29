@@ -1,0 +1,316 @@
+[
+  {
+    "weekNumber": 1,
+    "date": "2026-08-03",
+    "dsaTarget": 38,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Resume updated",
+      "3 startups applied",
+      "Tracker setup"
+    ],
+    "redFlags": [
+      "0 applications sent"
+    ],
+    "onTrack": true,
+    "theme": "Arrays Logic Building + Resume Update",
+    "phase": "M1"
+  },
+  {
+    "weekNumber": 2,
+    "date": "2026-08-10",
+    "dsaTarget": 60,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Better/GharPayy applied",
+      "OS Ch1-2 done"
+    ],
+    "redFlags": [
+      "Skipping DSA 3+ days"
+    ],
+    "onTrack": true,
+    "theme": "Arrays FAQs Medium/Hard + Sorting",
+    "phase": "M1"
+  },
+  {
+    "weekNumber": 3,
+    "date": "2026-08-17",
+    "dsaTarget": 82,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Binary Search templates locked"
+    ],
+    "redFlags": [
+      "No BS practice"
+    ],
+    "onTrack": true,
+    "theme": "Binary Search Complete",
+    "phase": "M1"
+  },
+  {
+    "weekNumber": 4,
+    "date": "2026-08-24",
+    "dsaTarget": 138,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Mock #1 done",
+      "TCS NextStep registered"
+    ],
+    "redFlags": [
+      "No mock interviews"
+    ],
+    "onTrack": true,
+    "theme": "Hashing + Month 1 Review",
+    "phase": "M1"
+  },
+  {
+    "weekNumber": 5,
+    "date": "2026-08-31",
+    "dsaTarget": 158,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Month 1 complete",
+      "~35 companies eligible"
+    ],
+    "redFlags": [
+      "Behind on recursion"
+    ],
+    "onTrack": true,
+    "theme": "2D Arrays + Recursion Start",
+    "phase": "M2"
+  },
+  {
+    "weekNumber": 6,
+    "date": "2026-09-07",
+    "dsaTarget": 180,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "LL fundamentals done"
+    ],
+    "redFlags": [
+      "No Internshala applications"
+    ],
+    "onTrack": true,
+    "theme": "Recursion + Linked List",
+    "phase": "M2"
+  },
+  {
+    "weekNumber": 7,
+    "date": "2026-09-14",
+    "dsaTarget": 202,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "~218/474 path"
+    ],
+    "redFlags": [
+      "Burnout / skipped mocks"
+    ],
+    "onTrack": true,
+    "theme": "Bit Manipulation + Greedy",
+    "phase": "M2"
+  },
+  {
+    "weekNumber": 8,
+    "date": "2026-09-21",
+    "dsaTarget": 251,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "8 mocks",
+      "25+ apps",
+      "CN basics"
+    ],
+    "redFlags": [
+      "Less than 15 applications"
+    ],
+    "onTrack": true,
+    "theme": "Sliding Window + Stack/Queue Start",
+    "phase": "M2"
+  },
+  {
+    "weekNumber": 9,
+    "date": "2026-09-28",
+    "dsaTarget": 272,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Phase 2 complete",
+      "60+ companies eligible"
+    ],
+    "redFlags": [
+      "No tree practice"
+    ],
+    "onTrack": true,
+    "theme": "Stack/Queue + Binary Trees",
+    "phase": "M2→M3"
+  },
+  {
+    "weekNumber": 10,
+    "date": "2026-10-05",
+    "dsaTarget": 294,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Microsoft applied"
+    ],
+    "redFlags": [
+      "No FAANG apps"
+    ],
+    "onTrack": true,
+    "theme": "Binary Trees Advanced + BST",
+    "phase": "M3"
+  },
+  {
+    "weekNumber": 11,
+    "date": "2026-10-12",
+    "dsaTarget": 316,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Graph templates"
+    ],
+    "redFlags": [
+      "Skipping SD"
+    ],
+    "onTrack": true,
+    "theme": "Heaps + Graphs BFS/DFS",
+    "phase": "M3"
+  },
+  {
+    "weekNumber": 12,
+    "date": "2026-10-19",
+    "dsaTarget": 340,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Microsoft applied",
+      "Amazon alert",
+      "SD #3"
+    ],
+    "redFlags": [
+      "No system design practice"
+    ],
+    "onTrack": true,
+    "theme": "Graphs Advanced + DP Start",
+    "phase": "M3→M4"
+  },
+  {
+    "weekNumber": 13,
+    "date": "2026-10-26",
+    "dsaTarget": 370,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "DP patterns"
+    ],
+    "redFlags": [
+      "DP avoidance"
+    ],
+    "onTrack": true,
+    "theme": "DP 2D + Advanced",
+    "phase": "M4"
+  },
+  {
+    "weekNumber": 14,
+    "date": "2026-11-02",
+    "dsaTarget": 403,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Phase 4 complete",
+      "85+ eligible"
+    ],
+    "redFlags": [
+      "No FAANG follow-ups"
+    ],
+    "onTrack": true,
+    "theme": "Tries + Strings + Maths",
+    "phase": "M4"
+  },
+  {
+    "weekNumber": 15,
+    "date": "2026-11-09",
+    "dsaTarget": 436,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Revision batches"
+    ],
+    "redFlags": [
+      "Contest avoidance"
+    ],
+    "onTrack": true,
+    "theme": "Full Revision + Contests",
+    "phase": "M5"
+  },
+  {
+    "weekNumber": 16,
+    "date": "2026-11-16",
+    "dsaTarget": 474,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "474/474",
+      "20+ mocks",
+      "LLD Part 1"
+    ],
+    "redFlags": [
+      "Less than 40 applications"
+    ],
+    "onTrack": true,
+    "theme": "Final Push + Advanced SD",
+    "phase": "M5"
+  },
+  {
+    "weekNumber": 17,
+    "date": "2026-11-23",
+    "dsaTarget": 474,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Mock marathon"
+    ],
+    "redFlags": [
+      "No networking"
+    ],
+    "onTrack": true,
+    "theme": "FAANG Ready — Mock Marathon",
+    "phase": "M5"
+  },
+  {
+    "weekNumber": 18,
+    "date": "2026-11-30",
+    "dsaTarget": 474,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "1+ interview pipeline"
+    ],
+    "redFlags": [
+      "No callbacks"
+    ],
+    "onTrack": true,
+    "theme": "Offer Season + Maintenance",
+    "phase": "M5"
+  },
+  {
+    "weekNumber": 19,
+    "date": "2026-12-14",
+    "dsaTarget": 474,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "1+ interview pipeline active",
+      "SD #10"
+    ],
+    "redFlags": [
+      "No interview callbacks at all"
+    ],
+    "onTrack": true,
+    "theme": "Buffer",
+    "phase": "M5"
+  },
+  {
+    "weekNumber": 20,
+    "date": "2026-12-28",
+    "dsaTarget": 474,
+    "dsaActual": 0,
+    "mustHaveDone": [
+      "Offer negotiation ready"
+    ],
+    "redFlags": [
+      "Idle December"
+    ],
+    "onTrack": true,
+    "theme": "Offer season",
+    "phase": "M5"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "category": "CN",
+    "title": "M1 Foundations",
+    "phase": 1
+  },
+  {
+    "category": "CN",
+    "title": "M2 Network Models",
+    "phase": 1
+  },
+  {
+    "category": "CN",
+    "title": "M3 Physical/Data Link",
+    "phase": 1
+  },
+  {
+    "category": "DBMS",
+    "title": "Intro, Data Models & ER",
+    "phase": 1
+  },
+  {
+    "category": "DBMS",
+    "title": "Relational Model & Normalization",
+    "phase": 1
+  },
+  {
+    "category": "OOP",
+    "title": "Introduction, Core Principles",
+    "phase": 1
+  },
+  {
+    "category": "Tech",
+    "title": "JS Fundamentals, Functions, ES6+",
+    "phase": 1
+  },
+  {
+    "category": "CN",
+    "title": "M4 Topologies/VLANs",
+    "phase": 2
+  },
+  {
+    "category": "DBMS",
+    "title": "SQL & Query Optimization",
+    "phase": 2
+  },
+  {
+    "category": "OOP",
+    "title": "Advanced OOP Features",
+    "phase": 2
+  },
+  {
+    "category": "LLD",
+    "title": "SOLID Principles",
+    "phase": 2
+  },
+  {
+    "category": "Tech",
+    "title": "Node.js, Express, REST",
+    "phase": 2
+  }
+]

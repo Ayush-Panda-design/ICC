@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Learn the basics",
+    "a2zStep": 1,
+    "month": 1,
+    "week": 1,
+    "order": 1,
+    "totalProblems": 54
+  },
+  {
+    "name": "Learn Important Sorting Techniques",
+    "a2zStep": 2,
+    "month": 1,
+    "week": 2,
+    "order": 2,
+    "totalProblems": 7
+  },
+  {
+    "name": "Solve Problems on Arrays [Easy → Medium → Hard]",
+    "a2zStep": 3,
+    "month": 1,
+    "week": 1,
+    "order": 3,
+    "totalProblems": 40
+  },
+  {
+    "name": "Binary Search [1D, 2D Arrays, Search Space]",
+    "a2zStep": 4,
+    "month": 1,
+    "week": 3,
+    "order": 4,
+    "totalProblems": 32
+  },
+  {
+    "name": "Strings [Basic and Medium]",
+    "a2zStep": 5,
+    "month": 1,
+    "week": 4,
+    "order": 5,
+    "totalProblems": 15
+  },
+  {
+    "name": "Learn LinkedList [Single LL, Double LL, Medium, Hard]",
+    "a2zStep": 6,
+    "month": 2,
+    "week": 6,
+    "order": 6,
+    "totalProblems": 31
+  },
+  {
+    "name": "Recursion [PatternWise]",
+    "a2zStep": 7,
+    "month": 2,
+    "week": 5,
+    "order": 7,
+    "totalProblems": 25
+  },
+  {
+    "name": "Bit Manipulation [Concepts & Problems]",
+    "a2zStep": 8,
+    "month": 2,
+    "week": 7,
+    "order": 8,
+    "totalProblems": 18
+  },
+  {
+    "name": "Stack and Queues [Learning, Pre-In-Post, Monotonic]",
+    "a2zStep": 9,
+    "month": 2,
+    "week": 8,
+    "order": 9,
+    "totalProblems": 30
+  },
+  {
+    "name": "Sliding Window & Two Pointer Combined Problems",
+    "a2zStep": 10,
+    "month": 2,
+    "week": 8,
+    "order": 10,
+    "totalProblems": 12
+  },
+  {
+    "name": "Heaps [Learning, Medium, Hard Problems]",
+    "a2zStep": 11,
+    "month": 3,
+    "week": 11,
+    "order": 11,
+    "totalProblems": 17
+  },
+  {
+    "name": "Greedy Algorithms [Easy, Medium/Hard]",
+    "a2zStep": 12,
+    "month": 2,
+    "week": 7,
+    "order": 12,
+    "totalProblems": 15
+  },
+  {
+    "name": "Binary Trees [Traversals, Medium and Hard Problems]",
+    "a2zStep": 13,
+    "month": 2,
+    "week": 9,
+    "order": 13,
+    "totalProblems": 38
+  },
+  {
+    "name": "Binary Search Trees [Concept and Problems]",
+    "a2zStep": 14,
+    "month": 3,
+    "week": 10,
+    "order": 14,
+    "totalProblems": 16
+  },
+  {
+    "name": "Graphs [Concepts & Problems]",
+    "a2zStep": 15,
+    "month": 3,
+    "week": 11,
+    "order": 15,
+    "totalProblems": 53
+  },
+  {
+    "name": "Dynamic Programming [Patterns and Problems]",
+    "a2zStep": 16,
+    "month": 4,
+    "week": 13,
+    "order": 16,
+    "totalProblems": 55
+  },
+  {
+    "name": "Tries",
+    "a2zStep": 17,
+    "month": 4,
+    "week": 14,
+    "order": 17,
+    "totalProblems": 7
+  },
+  {
+    "name": "Strings (Advanced)",
+    "a2zStep": 18,
+    "month": 4,
+    "week": 14,
+    "order": 18,
+    "totalProblems": 9
+  }
+]

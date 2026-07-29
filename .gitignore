@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+server/.env
+client/.env
+
+# Build / cache
+dist/
+build/
+.vite/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Coverage / misc
+coverage/
+.cache/

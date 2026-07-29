@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node seed/seed.js",
+    "seed:dsa": "node seed/seed-dsa.js",
+    "generate:companies": "node seed/generate-companies.js",
+    "generate:a2z": "node seed/generate-a2z.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "mongoose": "^9.8.1",
+    "node-cron": "^4.6.0",
+    "socket.io": "^4.8.3"
+  }
+}

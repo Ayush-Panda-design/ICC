@@ -1,0 +1,177 @@
+const Company = require('../../models/Company');
+const Notification = require('../../models/Notification');
+const { checkUrl, fallbackForCompany } = require('./urlHealth');
+const URL_CATALOG = require('./urlCatalog');
+
+async function pushNotification(io, payload) {
+  const doc = await Notification.create(payload);
+  if (io) io.emit('notification:new', doc.toObject());
+  return doc;
+}
+
+/**
+ * Check one company's apply URL; if broken, attach working fallback.
+ */
+async function healthCheckCompany(company, io) {
+  const primary = company.applyUrl || company.url;
+  const result = await checkUrl(primary);
+  const prev = company.urlStatus;
+
+  company.urlCheckedAt = new Date();
+  company.urlCheckReason = result.reason;
+
+  if (result.ok) {
+    company.urlStatus = 'ok';
+    if (result.finalUrl && result.finalUrl !== primary) {
+      company.applyUrl = result.finalUrl;
+      company.url = result.finalUrl;
+    }
+    await company.save();
+    if (prev === 'broken' && io) {
+      await pushNotification(io, {
+        type: 'url:fixed',
+        title: `Link fixed: ${company.name}`,
+        body: 'Apply URL is working again.',
+        companyId: company._id,
+        url: company.applyUrl || company.url
+      });
+    }
+    return { company, ok: true, result };
+  }
+
+  // Prefer catalog career page, else platform hub
+  const catalogUrl = URL_CATALOG[company.name];
+  let fallback = catalogUrl || company.fallbackUrl || fallbackForCompany(company);
+
+  // Verify fallback too
+  const fb = await checkUrl(fallback);
+  if (fb.ok) {
+    company.fallbackUrl = fb.finalUrl || fallback;
+    company.urlStatus = 'fallback';
+    // Swap primary to working fallback so Apply Now opens something useful
+    company.applyUrl = company.fallbackUrl;
+    company.url = company.fallbackUrl;
+  } else {
+    company.fallbackUrl = fallbackForCompany(company);
+    company.applyUrl = company.fallbackUrl;
+    company.url = company.fallbackUrl;
+    company.urlStatus = 'broken';
+  }
+
+  await company.save();
+
+  if (prev !== 'broken' && prev !== 'fallback') {
+    await pushNotification(io, {
+      type: 'url:broken',
+      title: `Broken link fixed with fallback: ${company.name}`,
+      body: `${result.reason}. Opened fallback hub instead.`,
+      companyId: company._id,
+      url: company.applyUrl,
+      meta: { original: primary, reason: result.reason }
+    });
+  }
+
+  return { company, ok: false, result, fallback: company.fallbackUrl };
+}
+
+/**
+ * Batch health-check Not Applied / high priority first.
+ */
+async function runUrlHealthCheck(io, { limit = 40 } = {}) {
+  const companies = await Company.find({
+    status: { $in: ['Not Applied', 'Applied'] }
+  })
+    .sort({ priority: 1, deadline: 1, updatedAt: -1 })
+    .limit(limit);
+
+  const summary = { checked: 0, ok: 0, fixed: 0, broken: 0 };
+  for (const company of companies) {
+    const r = await healthCheckCompany(company, io);
+    summary.checked += 1;
+    if (r.ok) summary.ok += 1;
+    else if (company.urlStatus === 'fallback') summary.fixed += 1;
+    else summary.broken += 1;
+  }
+
+  if (io) io.emit('urlhealth:complete', summary);
+  return summary;
+}
+
+/**
+ * Apply known good catalog URLs to all matching companies (one-shot repair).
+ */
+async function repairUrlsFromCatalog() {
+  let updated = 0;
+  for (const [name, url] of Object.entries(URL_CATALOG)) {
+    if (name === 'PLATFORM_FALLBACKS') continue;
+    const res = await Company.updateMany(
+      { name },
+      {
+        $set: {
+          applyUrl: url,
+          url,
+          urlStatus: 'unknown',
+          fallbackUrl: fallbackForCompany({ name, platform: 'Careers' })
+        }
+      }
+    );
+    updated += res.modifiedCount || 0;
+  }
+
+  // Fix Internshala-tagged companies to company search on stable internships hub + company query via LinkedIn
+  const intern = await Company.find({ platform: /Internshala/i });
+  for (const c of intern) {
+    if (URL_CATALOG[c.name]) continue;
+    // Use Internshala software internships hub (works) + LinkedIn company jobs as secondary
+    c.fallbackUrl = 'https://internshala.com/internships/software-development-internship';
+    c.applyUrl = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(c.name + ' internship')}&location=India`;
+    c.url = c.applyUrl;
+    c.urlStatus = 'unknown';
+    await c.save();
+    updated += 1;
+  }
+
+  // Fix Wellfound keyword searches → stable role page or LinkedIn
+  const wf = await Company.find({
+    $or: [
+      { platform: /Wellfound/i },
+      { applyUrl: /wellfound\.com\/jobs\?q=/i },
+      { url: /wellfound\.com\/jobs\?q=/i }
+    ]
+  });
+  for (const c of wf) {
+    if (URL_CATALOG[c.name]) {
+      c.applyUrl = URL_CATALOG[c.name];
+      c.url = URL_CATALOG[c.name];
+    } else {
+      c.applyUrl = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(c.name + ' software intern')}&location=India`;
+      c.url = c.applyUrl;
+      c.fallbackUrl = 'https://wellfound.com/role/r/software-engineer-intern';
+    }
+    c.urlStatus = 'unknown';
+    await c.save();
+    updated += 1;
+  }
+
+  // Kill Google search apply links
+  const goog = await Company.find({
+    $or: [{ applyUrl: /google\.com\/search/i }, { url: /google\.com\/search/i }]
+  });
+  for (const c of goog) {
+    const fb = URL_CATALOG[c.name] || fallbackForCompany(c);
+    c.applyUrl = fb;
+    c.url = fb;
+    c.urlStatus = 'fallback';
+    await c.save();
+    updated += 1;
+  }
+
+  return { updated };
+}
+
+module.exports = {
+  healthCheckCompany,
+  runUrlHealthCheck,
+  repairUrlsFromCatalog,
+  pushNotification
+};
