@@ -54,11 +54,25 @@ app.use(authMiddleware);
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/interview-command-center';
 
+let mongoReady = false;
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+  .then(() => {
+    mongoReady = true;
+    console.log('MongoDB connected successfully');
+  })
+  .catch((err) => {
+    mongoReady = false;
+    console.error('MongoDB connection error:', err);
+  });
 
-app.get('/health', (req, res) => res.json({ ok: true, serveClient }));
+mongoose.connection.on('connected', () => { mongoReady = true; });
+mongoose.connection.on('disconnected', () => { mongoReady = false; });
+
+app.get('/health', (req, res) => res.json({
+  ok: true,
+  serveClient,
+  mongo: mongoReady ? 'connected' : 'disconnected'
+}));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/dashboard', require('./routes/dashboard'));

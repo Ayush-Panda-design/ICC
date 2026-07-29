@@ -10,10 +10,14 @@ import { useAlertsSocket } from '../hooks/useAlertsSocket';
 const Dashboard = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
 
   const loadDashboard = async () => {
     const response = await apiFetch('/api/dashboard/today');
-    if (!response.ok) throw new Error('Failed');
+    if (!response.ok) {
+      const body = await response.json().catch(() => ({}));
+      throw new Error(body.message || `API ${response.status}`);
+    }
     return response.json();
   };
 
@@ -22,6 +26,7 @@ const Dashboard = () => {
       try {
         const payload = await loadDashboard();
         setData(payload);
+        setLoadError('');
         setLoading(false);
         if (payload.urgentCompanies && payload.urgentCompanies.length > 0) {
           toast(`Today's priority: Apply to ${payload.urgentCompanies[0].name}`, {
@@ -31,6 +36,7 @@ const Dashboard = () => {
         }
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
+        setLoadError(error.message || 'Failed to load');
         setLoading(false);
       }
     };
@@ -95,7 +101,20 @@ const Dashboard = () => {
     return <div className="flex items-center justify-center h-full"><div className="animate-pulse text-accent-yellow font-bold text-xl">Loading Command Center...</div></div>;
   }
 
-  if (!data) return <div className="p-8">Error loading data. Ensure backend is running.</div>;
+  if (!data) {
+    return (
+      <div className="p-8 max-w-xl space-y-3">
+        <p className="font-bold text-accent-red">Couldn’t load dashboard data</p>
+        <p className="text-sm text-text-muted">{loadError || 'API request failed.'}</p>
+        <p className="text-sm text-text-muted">
+          If this is Render: Atlas is likely blocking the server IP. In MongoDB Atlas →{' '}
+          <b>Network Access</b> → add <code>0.0.0.0/0</code> (Allow from anywhere), then set{' '}
+          <code>MONGO_URI</code> with database name <code>interview-command-center</code>, restart, and run{' '}
+          <code>cd server && npm run seed</code> once.
+        </p>
+      </div>
+    );
+  }
 
   const { userProgress, task, urgentCompanies, onTrackStatus, quote, performance } = data;
   const completed = task?.completed || [];
