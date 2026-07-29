@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Bell, CheckCheck, ExternalLink } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { API_BASE } from '../api/companies';
+import { apiFetch } from '../api/auth';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
 const Notifications = () => {
@@ -11,7 +11,7 @@ const Notifications = () => {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/notifications`);
+      const res = await apiFetch('/api/notifications');
       const data = await res.json();
       setItems(data.items || []);
       setUnread(data.unread || 0);
@@ -29,12 +29,12 @@ const Notifications = () => {
   useAlertsSocket({ onRefresh: load, silent: true });
 
   const markAll = async () => {
-    await fetch(`${API_BASE}/api/notifications/read-all`, { method: 'PATCH' });
+    await apiFetch('/api/notifications/read-all', { method: 'PATCH' });
     load();
   };
 
   const markOne = async (id) => {
-    await fetch(`${API_BASE}/api/notifications/${id}/read`, { method: 'PATCH' });
+    await apiFetch(`/api/notifications/${id}/read`, { method: 'PATCH' });
     load();
   };
 

@@ -7,6 +7,7 @@ const {
 } = require('./adapters');
 const { checkUrl } = require('./urlHealth');
 const { pushNotification, repairUrlsFromCatalog, runUrlHealthCheck } = require('./urlRepair');
+const { getLiveHubDefinitions } = require('./liveHubs');
 
 async function syncCompanyBoard(company) {
   let roles = [];
@@ -141,67 +142,32 @@ async function syncRemotiveIntoDb(io) {
 }
 
 /**
- * Watch major platform hubs — upsert “live board” cards so Alerts always has
- * working Internshala / Wellfound / Unstop / LinkedIn entry points, and notify on refresh.
+ * Resolve first healthy URL from primary + alternates (env override via liveHubs.js).
+ */
+async function pickHealthyUrl(urls) {
+  let last = { ok: false, reason: 'no urls', finalUrl: urls[0] };
+  for (const url of urls) {
+    const health = await checkUrl(url);
+    last = health;
+    if (health.ok) {
+      return { url: health.finalUrl || url, health, tried: urls };
+    }
+  }
+  return { url: urls[0], health: last, tried: urls };
+}
+
+/**
+ * Watch major platform hubs — upsert live board cards. URLs come from liveHubs.js
+ * (env-overridable) and are re-verified on every sync so site structure changes get caught.
  */
 async function syncPlatformHubs(io) {
-  const hubs = [
-    {
-      name: 'Internshala — Software Internships',
-      role: 'Live board: software development internships',
-      platform: 'Internshala',
-      category: 'Startup',
-      url: 'https://internshala.com/internships/software-development-internship',
-      matchScore: 95,
-      priority: 'High',
-      batch: 'LiveHub'
-    },
-    {
-      name: 'Wellfound — SWE Intern roles',
-      role: 'Live board: software engineer intern',
-      platform: 'Wellfound',
-      category: 'Startup',
-      url: 'https://wellfound.com/role/r/software-engineer-intern',
-      matchScore: 93,
-      priority: 'High',
-      batch: 'LiveHub'
-    },
-    {
-      name: 'Unstop — Internships',
-      role: 'Live campus & off-campus internships',
-      platform: 'Unstop',
-      category: 'Service',
-      url: 'https://unstop.com/internships',
-      matchScore: 90,
-      priority: 'High',
-      batch: 'LiveHub'
-    },
-    {
-      name: 'LinkedIn — Intern India',
-      role: 'Live LinkedIn intern search (India)',
-      platform: 'LinkedIn',
-      category: 'Startup',
-      url: 'https://www.linkedin.com/jobs/search/?keywords=software%20engineer%20intern&location=India',
-      matchScore: 88,
-      priority: 'High',
-      batch: 'LiveHub'
-    },
-    {
-      name: 'Remotive — Software Dev',
-      role: 'Live remote software jobs',
-      platform: 'Remotive',
-      category: 'Startup',
-      url: 'https://remotive.com/remote-jobs/software-dev',
-      matchScore: 85,
-      priority: 'Medium',
-      batch: 'LiveHub'
-    }
-  ];
-
+  const hubs = getLiveHubDefinitions();
   const events = [];
+
   for (const hub of hubs) {
-    const health = await checkUrl(hub.url);
-    const goodUrl = health.ok ? (health.finalUrl || hub.url) : hub.url;
+    const picked = await pickHealthyUrl(hub.urls);
+    const goodUrl = picked.url;
+    const healthOk = Boolean(picked.health?.ok);
 
     let company = await Company.findOne({ name: hub.name, batch: 'LiveHub' });
     const isNew = !company;
@@ -218,32 +184,36 @@ async function syncPlatformHubs(io) {
         status: 'Not Applied',
         source: 'platform-hub',
         boardType: 'manual',
-        isOpen: health.ok,
+        isOpen: healthOk,
         batch: 'LiveHub',
         url: goodUrl,
         applyUrl: goodUrl,
-        urlStatus: health.ok ? 'ok' : 'broken',
+        fallbackUrl: hub.urls[hub.urls.length - 1],
+        urlStatus: healthOk ? 'ok' : 'broken',
         urlCheckedAt: new Date(),
-        urlCheckReason: health.reason
+        urlCheckReason: picked.health?.reason
       });
     } else {
-      company.isOpen = health.ok;
+      company.isOpen = healthOk;
       company.url = goodUrl;
       company.applyUrl = goodUrl;
-      company.urlStatus = health.ok ? 'ok' : 'broken';
+      company.fallbackUrl = hub.urls[hub.urls.length - 1];
+      company.urlStatus = healthOk ? 'ok' : 'broken';
       company.urlCheckedAt = new Date();
-      company.urlCheckReason = health.reason;
+      company.urlCheckReason = picked.health?.reason;
       company.lastSyncedAt = new Date();
       company.role = hub.role;
+      company.matchScore = hub.matchScore;
+      company.priority = hub.priority;
     }
     await company.save();
 
-    if (isNew && health.ok) {
+    if (isNew && healthOk) {
       events.push({ type: 'opening:new', company: company.toObject(), role: { title: hub.role, url: goodUrl } });
       await pushNotification(io, {
         type: 'opening:new',
         title: `Platform linked: ${hub.platform}`,
-        body: `${hub.name} is connected. New listings will surface when you Sync.`,
+        body: `${hub.name} is connected (verified).`,
         companyId: company._id,
         url: goodUrl,
         meta: { platform: hub.platform, hub: true }

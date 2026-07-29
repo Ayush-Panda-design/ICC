@@ -25,6 +25,9 @@ app.use(cors({
 }));
 app.use(express.json());
 
+const { authMiddleware } = require('./middleware/auth');
+app.use(authMiddleware);
+
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/interview-command-center';
 
@@ -36,6 +39,9 @@ app.get('/', (req, res) => {
   res.send('Interview Command Center API is running...');
 });
 
+app.get('/health', (req, res) => res.json({ ok: true }));
+
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/companies', require('./routes/companies'));
 app.use('/api/applications', require('./routes/applications'));

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { format, addDays, parseISO } from 'date-fns';
 import { Calendar as CalendarIcon, CheckCircle, ChevronLeft, ChevronRight, Flag } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { API_BASE } from '../api/companies';
+import { apiFetch } from '../api/auth';
 
 const TASK_META = [
   { key: 'dsa', label: 'DSA (P0)', field: 'dsaFocus', color: 'bg-accent-yellow' },
@@ -23,8 +23,8 @@ const DailyPlanner = () => {
     setLoading(true);
     try {
       const [tRes, cRes] = await Promise.all([
-        fetch(`${API_BASE}/api/tasks?week=${w}`),
-        fetch(`${API_BASE}/api/checkpoints`)
+        apiFetch(`/api/tasks?week=${w}`),
+        apiFetch('/api/checkpoints')
       ]);
       const tData = await tRes.json();
       const cData = await cRes.json();
@@ -55,9 +55,8 @@ const DailyPlanner = () => {
     if (!selected) return;
     const dateStr = format(parseISO(selected.date), 'yyyy-MM-dd');
     try {
-      const res = await fetch(`${API_BASE}/api/tasks/${dateStr}/complete`, {
+      const res = await apiFetch(`/api/tasks/${dateStr}/complete`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ taskKey })
       });
       const data = await res.json();

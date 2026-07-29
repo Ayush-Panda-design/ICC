@@ -86,6 +86,17 @@ router.get('/alerts', async (req, res) => {
   }
 });
 
+// GET /api/companies/hubs — LiveHub cards (DB-backed, last verified on Sync)
+router.get('/hubs', async (req, res) => {
+  try {
+    const hubs = await Company.find({ batch: 'LiveHub' }).sort({ matchScore: -1 });
+    res.json(hubs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // POST /api/companies/sync — live open-role sync + repair + health sample
 router.post('/sync', async (req, res) => {
   try {

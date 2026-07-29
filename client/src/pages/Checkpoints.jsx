@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Flag, Target } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { API_BASE } from '../api/companies';
+import { apiFetch } from '../api/auth';
 
 const Checkpoints = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/checkpoints`)
+    apiFetch('/api/checkpoints')
       .then((r) => r.json())
       .then(setData)
       .catch(() => toast.error('Failed to load checkpoints'))

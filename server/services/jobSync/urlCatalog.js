@@ -64,7 +64,7 @@ module.exports = {
 module.exports.PLATFORM_FALLBACKS = {
   Internshala: 'https://internshala.com/internships/software-development-internship',
   Wellfound: 'https://wellfound.com/role/r/software-engineer-intern',
-  LinkedIn: 'https://www.linkedin.com/jobs/search/?keywords=software%20engineer%20intern%20India&location=India',
+  LinkedIn: 'https://www.linkedin.com/jobs/search/?keywords=software%20engineer%20intern&location=India&f_E=1',
   Unstop: 'https://unstop.com/internships',
   Remotive: 'https://remotive.com/remote-jobs/software-dev',
   Careers: 'https://internshala.com/internships/software-development-internship',

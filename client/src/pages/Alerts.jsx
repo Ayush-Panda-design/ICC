@@ -5,7 +5,7 @@ import {
   Search, Filter, Briefcase
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { applyToCompany, buildCompanyQuery, API_BASE, getWorkingApplyUrl } from '../api/companies';
+import { applyToCompany, buildCompanyQuery, getWorkingApplyUrl, apiFetch } from '../api/companies';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
 const Alerts = () => {
@@ -26,7 +26,7 @@ const Alerts = () => {
 
   const fetchCompanies = useCallback(async () => {
     try {
-      const res = await fetch(buildCompanyQuery(filters));
+      const res = await apiFetch(buildCompanyQuery(filters));
       const data = await res.json();
       setCompanies(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -48,7 +48,7 @@ const Alerts = () => {
     try {
       const result = await applyToCompany(company);
       if (result.warned) {
-        toast('Original link was broken — opened a working platform hub instead', { icon: '⚠️' });
+        toast('Opened platform hub / fallback — listing may not be company-specific', { icon: '⚠️' });
       } else {
         toast.success(`Applied to ${company.name}`);
       }
@@ -61,7 +61,7 @@ const Alerts = () => {
   const handleSync = async () => {
     setSyncing(true);
     try {
-      const res = await fetch(`${API_BASE}/api/companies/sync`, { method: 'POST' });
+      const res = await apiFetch('/api/companies/sync', { method: 'POST' });
       const summary = await res.json();
       if (!res.ok) throw new Error(summary.message);
       toast.success(
@@ -79,9 +79,8 @@ const Alerts = () => {
   const handleHealthCheck = async () => {
     setChecking(true);
     try {
-      const res = await fetch(`${API_BASE}/api/companies/health-check`, {
+      const res = await apiFetch('/api/companies/health-check', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ limit: 50 })
       });
       const summary = await res.json();

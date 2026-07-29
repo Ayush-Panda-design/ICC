@@ -2,6 +2,18 @@ const Company = require('../../models/Company');
 const Notification = require('../../models/Notification');
 const { checkUrl, fallbackForCompany } = require('./urlHealth');
 const URL_CATALOG = require('./urlCatalog');
+const {
+  internshalaCompanyUrl,
+  PLATFORM_HUB_PRIMARY
+} = require('./liveHubs');
+
+function isLinkedInSearch(url) {
+  return /linkedin\.com\/jobs\/search/i.test(url || '');
+}
+
+function isGenericSearch(url) {
+  return isLinkedInSearch(url) || /google\.com\/search/i.test(url || '') || /wellfound\.com\/jobs\?q=/i.test(url || '');
+}
 
 async function pushNotification(io, payload) {
   const doc = await Notification.create(payload);
@@ -118,21 +130,30 @@ async function repairUrlsFromCatalog() {
     updated += res.modifiedCount || 0;
   }
 
-  // Fix Internshala-tagged companies to company search on stable internships hub + company query via LinkedIn
-  const intern = await Company.find({ platform: /Internshala/i });
+  // Internshala-tagged: real Internshala keyword board (not LinkedIn search)
+  const intern = await Company.find({ platform: /Internshala/i, batch: { $ne: 'LiveHub' } });
   for (const c of intern) {
     if (URL_CATALOG[c.name]) continue;
-    // Use Internshala software internships hub (works) + LinkedIn company jobs as secondary
-    c.fallbackUrl = 'https://internshala.com/internships/software-development-internship';
-    c.applyUrl = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(c.name + ' internship')}&location=India`;
-    c.url = c.applyUrl;
-    c.urlStatus = 'unknown';
+    // Prefer existing real open role URL
+    const liveRole = (c.openRoles || []).find((r) => r.url && !isGenericSearch(r.url));
+    if (liveRole) {
+      c.applyUrl = liveRole.url;
+      c.url = liveRole.url;
+      c.fallbackUrl = PLATFORM_HUB_PRIMARY.Internshala;
+      c.urlStatus = 'ok';
+    } else if (!c.applyUrl || isGenericSearch(c.applyUrl)) {
+      c.applyUrl = internshalaCompanyUrl(c.name);
+      c.url = c.applyUrl;
+      c.fallbackUrl = PLATFORM_HUB_PRIMARY.Internshala;
+      c.urlStatus = 'fallback';
+    }
     await c.save();
     updated += 1;
   }
 
-  // Fix Wellfound keyword searches → stable role page or LinkedIn
+  // Wellfound: catalog or stable role hub — never LinkedIn search as primary
   const wf = await Company.find({
+    batch: { $ne: 'LiveHub' },
     $or: [
       { platform: /Wellfound/i },
       { applyUrl: /wellfound\.com\/jobs\?q=/i },
@@ -143,25 +164,56 @@ async function repairUrlsFromCatalog() {
     if (URL_CATALOG[c.name]) {
       c.applyUrl = URL_CATALOG[c.name];
       c.url = URL_CATALOG[c.name];
+      c.urlStatus = 'unknown';
     } else {
-      c.applyUrl = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(c.name + ' software intern')}&location=India`;
-      c.url = c.applyUrl;
-      c.fallbackUrl = 'https://wellfound.com/role/r/software-engineer-intern';
+      const liveRole = (c.openRoles || []).find((r) => r.url && !isGenericSearch(r.url));
+      if (liveRole) {
+        c.applyUrl = liveRole.url;
+        c.url = liveRole.url;
+        c.urlStatus = 'ok';
+      } else {
+        c.applyUrl = PLATFORM_HUB_PRIMARY.Wellfound;
+        c.url = PLATFORM_HUB_PRIMARY.Wellfound;
+        c.urlStatus = 'fallback';
+      }
+      c.fallbackUrl = PLATFORM_HUB_PRIMARY.Wellfound;
     }
-    c.urlStatus = 'unknown';
     await c.save();
     updated += 1;
   }
 
-  // Kill Google search apply links
-  const goog = await Company.find({
-    $or: [{ applyUrl: /google\.com\/search/i }, { url: /google\.com\/search/i }]
+  // Replace LinkedIn / Google search primaries with catalog or platform hub
+  const searches = await Company.find({
+    batch: { $ne: 'LiveHub' },
+    $or: [
+      { applyUrl: /linkedin\.com\/jobs\/search/i },
+      { url: /linkedin\.com\/jobs\/search/i },
+      { applyUrl: /google\.com\/search/i },
+      { url: /google\.com\/search/i }
+    ]
   });
-  for (const c of goog) {
-    const fb = URL_CATALOG[c.name] || fallbackForCompany(c);
-    c.applyUrl = fb;
-    c.url = fb;
-    c.urlStatus = 'fallback';
+  for (const c of searches) {
+    const liveRole = (c.openRoles || []).find((r) => r.url && !isGenericSearch(r.url));
+    if (liveRole) {
+      c.applyUrl = liveRole.url;
+      c.url = liveRole.url;
+      c.urlStatus = 'ok';
+    } else if (URL_CATALOG[c.name]) {
+      c.applyUrl = URL_CATALOG[c.name];
+      c.url = URL_CATALOG[c.name];
+      c.urlStatus = 'unknown';
+    } else if (/Internshala/i.test(c.platform)) {
+      c.applyUrl = internshalaCompanyUrl(c.name);
+      c.url = c.applyUrl;
+      c.fallbackUrl = PLATFORM_HUB_PRIMARY.Internshala;
+      c.urlStatus = 'fallback';
+    } else {
+      const fb = fallbackForCompany(c);
+      c.applyUrl = fb;
+      c.url = fb;
+      c.fallbackUrl = fb;
+      c.urlStatus = 'fallback';
+    }
     await c.save();
     updated += 1;
   }

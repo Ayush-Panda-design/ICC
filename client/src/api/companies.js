@@ -1,18 +1,29 @@
+import { apiFetch, authHeaders } from './auth';
+
 export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-/** Prefer working apply URL (ok/fallback) over known-broken. */
+function isGenericSearch(url) {
+  return /linkedin\.com\/jobs\/search|google\.com\/search|wellfound\.com\/jobs\?q=/i.test(url || '');
+}
+
+/** Prefer real open-role URL, then working apply URL. */
 export function getWorkingApplyUrl(company) {
   if (!company) return null;
+  const liveRole = (company.openRoles || []).find((r) => r?.url && !isGenericSearch(r.url));
+  if (liveRole?.url) return liveRole.url;
   if (company.urlStatus === 'broken' && company.fallbackUrl) return company.fallbackUrl;
-  return company.applyUrl || company.url || company.fallbackUrl || null;
+  const primary = company.applyUrl || company.url || company.fallbackUrl || null;
+  if (primary && isGenericSearch(primary) && company.fallbackUrl && !isGenericSearch(company.fallbackUrl)) {
+    return company.fallbackUrl;
+  }
+  return primary;
 }
 
 export async function applyToCompany(company) {
   const id = company._id || company.id;
   const url = getWorkingApplyUrl(company);
-  const res = await fetch(`${API_BASE}/api/companies/${id}`, {
+  const res = await apiFetch(`/api/companies/${id}`, {
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ status: 'Applied' })
   });
   if (!res.ok) throw new Error('Failed to mark applied');
@@ -21,13 +32,12 @@ export async function applyToCompany(company) {
   if (!url) {
     throw Object.assign(new Error('No working apply link — run Sync / Health Check'), { code: 'NO_URL' });
   }
-  if (company.urlStatus === 'broken') {
-    // still open fallback but caller can toast warning
-    window.open(url, '_blank', 'noopener,noreferrer');
-    return { ...data, warned: true, openedUrl: url };
-  }
   window.open(url, '_blank', 'noopener,noreferrer');
-  return { ...data, openedUrl: url };
+  return {
+    ...data,
+    warned: company.urlStatus === 'broken' || isGenericSearch(company.applyUrl),
+    openedUrl: url
+  };
 }
 
 export function buildCompanyQuery(filters) {
@@ -38,5 +48,13 @@ export function buildCompanyQuery(filters) {
     }
   });
   const qs = params.toString();
-  return `${API_BASE}/api/companies${qs ? `?${qs}` : ''}`;
+  return `/api/companies${qs ? `?${qs}` : ''}`;
 }
+
+export async function fetchCompanies(filters) {
+  const res = await apiFetch(buildCompanyQuery(filters));
+  if (!res.ok) throw new Error('Failed to load companies');
+  return res.json();
+}
+
+export { authHeaders, apiFetch };

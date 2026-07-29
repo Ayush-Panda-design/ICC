@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { Briefcase, ExternalLink } from 'lucide-react';
-import { API_BASE } from '../api/companies';
+import { apiFetch } from '../api/auth';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
 const COLUMNS = ['Applied', 'OA', 'Interview', 'Offer', 'Rejected'];
@@ -17,7 +17,7 @@ const Applications = () => {
       const params = new URLSearchParams();
       if (filters.q) params.set('q', filters.q);
       if (filters.category) params.set('category', filters.category);
-      const res = await fetch(`${API_BASE}/api/applications?${params}`);
+      const res = await apiFetch(`/api/applications?${params}`);
       const data = await res.json();
       setKanban(data.kanban || {});
       setStats(data.stats || {});
@@ -38,9 +38,8 @@ const Applications = () => {
 
   const moveStatus = async (appId, status) => {
     try {
-      const res = await fetch(`${API_BASE}/api/applications/${appId}`, {
+      const res = await apiFetch(`/api/applications/${appId}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status })
       });
       if (!res.ok) throw new Error('Update failed');

@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { format, differenceInDays } from 'date-fns';
 import { CheckCircle, AlertTriangle, Clock, Target, Calendar, Award, Briefcase, ChevronRight, ExternalLink } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import toast from 'react-hot-toast';
 import { applyToCompany } from '../api/companies';
+import { apiFetch } from '../api/auth';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const loadDashboard = async () => {
+    const response = await apiFetch('/api/dashboard/today');
+    if (!response.ok) throw new Error('Failed');
+    return response.json();
+  };
+
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/dashboard/today');
-        setData(response.data);
+        const payload = await loadDashboard();
+        setData(payload);
         setLoading(false);
-        
-        // Show priority toast
-        if (response.data.urgentCompanies && response.data.urgentCompanies.length > 0) {
-            toast(`Today's priority: Apply to ${response.data.urgentCompanies[0].name}`, {
-                icon: '🚀',
-                duration: 5000,
-            });
+        if (payload.urgentCompanies && payload.urgentCompanies.length > 0) {
+          toast(`Today's priority: Apply to ${payload.urgentCompanies[0].name}`, {
+            icon: '🚀',
+            duration: 5000
+          });
         }
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -37,9 +41,7 @@ const Dashboard = () => {
   useAlertsSocket({
     silent: true,
     onRefresh: () => {
-      axios.get('http://localhost:5000/api/dashboard/today').then((response) => {
-        setData(response.data);
-      }).catch(() => {});
+      loadDashboard().then(setData).catch(() => {});
     }
   });
 
@@ -49,8 +51,7 @@ const Dashboard = () => {
     try {
       await applyToCompany(company);
       toast.success(`Marked applied: ${company.name}`);
-      const response = await axios.get('http://localhost:5000/api/dashboard/today');
-      setData(response.data);
+      setData(await loadDashboard());
     } catch {
       toast.error('Failed to apply');
     }
@@ -58,13 +59,17 @@ const Dashboard = () => {
 
   const toggleTask = async (taskKey) => {
     try {
-      const res = await axios.patch('http://localhost:5000/api/dashboard/today/complete', { taskKey });
+      const res = await apiFetch('/api/dashboard/today/complete', {
+        method: 'PATCH',
+        body: JSON.stringify({ taskKey })
+      });
+      const payload = await res.json();
       setData((prev) => ({
         ...prev,
-        task: res.data.task,
-        userProgress: res.data.userProgress || prev.userProgress
+        task: payload.task,
+        userProgress: payload.userProgress || prev.userProgress
       }));
-      const done = res.data.task?.completed?.includes(taskKey);
+      const done = payload.task?.completed?.includes(taskKey);
       toast.success(done ? 'Task marked done' : 'Task unmarked');
     } catch {
       toast.error('Could not update task');
@@ -73,11 +78,12 @@ const Dashboard = () => {
 
   const markDayDone = async () => {
     try {
-      const res = await axios.patch('http://localhost:5000/api/dashboard/today/complete-all');
+      const res = await apiFetch('/api/dashboard/today/complete-all', { method: 'PATCH' });
+      const payload = await res.json();
       setData((prev) => ({
         ...prev,
-        task: res.data.task,
-        userProgress: res.data.userProgress || prev.userProgress
+        task: payload.task,
+        userProgress: payload.userProgress || prev.userProgress
       }));
       toast.success('Day marked complete — streak updated');
     } catch {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
 import { ChevronDown, ChevronRight, Search, CheckCircle, Circle, PlayCircle, RefreshCw, Award } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { apiFetch } from '../api/auth';
 
 const TRACKS = [
   { id: 'startup_service', label: 'Sep Interview Ready' },
@@ -22,13 +22,14 @@ const DSATracker = () => {
 
   const fetchDSAData = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/dsa?track=${track}`);
-      setTopics(res.data.topics || []);
-      setStats(res.data.stats || null);
-      if ((res.data.topics || []).length > 0) {
+      const res = await apiFetch(`/api/dsa?track=${track}`);
+      const data = await res.json();
+      setTopics(data.topics || []);
+      setStats(data.stats || null);
+      if ((data.topics || []).length > 0) {
         setExpandedTopics((prev) => {
           if (Object.keys(prev).length) return prev;
-          return { [res.data.topics[0]._id]: true };
+          return { [data.topics[0]._id]: true };
         });
       }
       setLoading(false);
@@ -52,7 +53,10 @@ const DSATracker = () => {
     const idx = STATUS_CYCLE.indexOf(problem.status);
     const newStatus = STATUS_CYCLE[(idx + 1) % STATUS_CYCLE.length];
     try {
-      await axios.patch(`http://localhost:5000/api/dsa/problems/${problem._id}`, { status: newStatus });
+      await apiFetch(`/api/dsa/problems/${problem._id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ status: newStatus })
+      });
       toast.success(`${problem.name.slice(0, 40)} → ${newStatus}`);
       fetchDSAData();
     } catch {
@@ -62,7 +66,10 @@ const DSATracker = () => {
 
   const handleStatusChange = async (problemId, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/dsa/problems/${problemId}`, { status: newStatus });
+      await apiFetch(`/api/dsa/problems/${problemId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ status: newStatus })
+      });
       toast.success(`Marked as ${newStatus}`);
       fetchDSAData();
     } catch {

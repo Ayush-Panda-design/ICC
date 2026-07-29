@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag } from 'lucide-react';
-import { useCallback, useState } from 'react';
+import { Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag, LogOut } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
 
 import Dashboard from './pages/Dashboard';
 import DailyPlanner from './pages/DailyPlanner';
@@ -10,9 +10,11 @@ import DSATracker from './pages/DSATracker';
 import Applications from './pages/Applications';
 import Notifications from './pages/Notifications';
 import Checkpoints from './pages/Checkpoints';
+import LoginGate from './pages/LoginGate';
 import { useAlertsSocket } from './hooks/useAlertsSocket';
+import { checkAuthStatus, clearToken, getToken } from './api/auth';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, onLogout }) => {
   const [refreshKey, setRefreshKey] = useState(0);
   const onRefresh = useCallback(() => setRefreshKey((k) => k + 1), []);
   const { badgeCount, clearBadge, connected } = useAlertsSocket({ onRefresh });
@@ -82,6 +84,15 @@ const Layout = ({ children }) => {
             </li>
           </ul>
         </nav>
+        {onLogout && (
+          <button
+            type="button"
+            onClick={onLogout}
+            className="mt-4 flex items-center gap-2 p-3 text-sm text-text-muted hover:text-accent-red transition"
+          >
+            <LogOut size={16} /> Lock
+          </button>
+        )}
       </aside>
       <main className="flex-1 overflow-auto">
         {children}
@@ -91,9 +102,50 @@ const Layout = ({ children }) => {
 };
 
 function App() {
+  const [authReady, setAuthReady] = useState(false);
+  const [authed, setAuthed] = useState(false);
+  const [authRequired, setAuthRequired] = useState(false);
+
+  const refreshAuth = useCallback(async () => {
+    try {
+      const status = await checkAuthStatus();
+      setAuthRequired(Boolean(status.required));
+      if (!status.required) {
+        setAuthed(true);
+      } else {
+        setAuthed(Boolean(getToken()));
+      }
+    } catch {
+      setAuthRequired(false);
+      setAuthed(true);
+    } finally {
+      setAuthReady(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    refreshAuth();
+    const onNeed = () => setAuthed(false);
+    window.addEventListener('icc:auth-required', onNeed);
+    return () => window.removeEventListener('icc:auth-required', onNeed);
+  }, [refreshAuth]);
+
+  const handleLogout = () => {
+    clearToken();
+    setAuthed(false);
+  };
+
+  if (!authReady) {
+    return <div className="min-h-screen bg-cream-bg flex items-center justify-center text-text-muted">Loading…</div>;
+  }
+
+  if (authRequired && !authed) {
+    return <LoginGate onSuccess={() => setAuthed(true)} />;
+  }
+
   return (
     <BrowserRouter>
-      <Layout>
+      <Layout onLogout={authRequired ? handleLogout : null}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/planner" element={<DailyPlanner />} />
