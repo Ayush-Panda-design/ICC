@@ -1,6 +1,6 @@
-import { apiFetch, authHeaders } from './auth';
+import { apiFetch, authHeaders, API_BASE } from './auth';
 
-export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+export { API_BASE };
 
 function isGenericSearch(url) {
   return /linkedin\.com\/jobs\/search|google\.com\/search|wellfound\.com\/jobs\?q=/i.test(url || '');

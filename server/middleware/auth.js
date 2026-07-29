@@ -39,8 +39,10 @@ function authMiddleware(req, res, next) {
   if (!isAuthEnabled()) return next();
 
   const path = (req.originalUrl || req.url || '').split('?')[0];
+
+  // Only gate API routes; SPA HTML/assets stay public (login UI must load)
+  if (!path.startsWith('/api')) return next();
   if (path === '/api/auth/status' || path === '/api/auth/login') return next();
-  if (path === '/' || path === '/health') return next();
 
   const header = req.headers.authorization || '';
   const bearer = header.startsWith('Bearer ') ? header.slice(7).trim() : '';

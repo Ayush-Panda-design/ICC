@@ -1,5 +1,15 @@
+/**
+ * Same-origin in production (Render single service).
+ * Local Vite → talk to API on :5000 unless VITE_API_URL is set.
+ */
+export const API_BASE =
+  import.meta.env.VITE_API_URL !== undefined && import.meta.env.VITE_API_URL !== ''
+    ? import.meta.env.VITE_API_URL
+    : import.meta.env.DEV
+      ? 'http://localhost:5000'
+      : '';
+
 const TOKEN_KEY = 'icc_access_token';
-export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export function getToken() {
   return sessionStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY) || '';

@@ -1,8 +1,10 @@
 import { useEffect, useState, useCallback } from 'react';
 import { io } from 'socket.io-client';
 import toast from 'react-hot-toast';
+import { API_BASE } from '../api/auth';
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+/** Empty string = same origin (production single-service deploy). */
+const SOCKET_URL = API_BASE || undefined;
 
 let sharedSocket = null;
 

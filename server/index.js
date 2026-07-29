@@ -1,28 +1,51 @@
 const express = require('express');
 const http = require('http');
+const path = require('path');
+const fs = require('fs');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+const isProd = process.env.NODE_ENV === 'production';
+const clientDist = path.join(__dirname, '../client/dist');
+const serveClient = fs.existsSync(path.join(clientDist, 'index.html'));
+
+const LOCAL_ORIGINS = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:5174',
+  'http://127.0.0.1:5174',
+  'http://localhost:5000',
+  'http://127.0.0.1:5000'
+];
+
+const corsOrigin = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',').map((s) => s.trim()).filter(Boolean)
+  : isProd
+    ? true // same-origin + Reflect request Origin when present
+    : LOCAL_ORIGINS;
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5174', 'http://127.0.0.1:5174'],
+    origin: corsOrigin,
     methods: ['GET', 'POST', 'PATCH']
   }
 });
 
 app.set('io', io);
 
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5174', 'http://127.0.0.1:5174']
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
+  // SPA + Vite assets; tighten later if needed
+  contentSecurityPolicy: false
 }));
+app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
 
 const { authMiddleware } = require('./middleware/auth');
@@ -35,11 +58,7 @@ mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-app.get('/', (req, res) => {
-  res.send('Interview Command Center API is running...');
-});
-
-app.get('/health', (req, res) => res.json({ ok: true }));
+app.get('/health', (req, res) => res.json({ ok: true, serveClient }));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/dashboard', require('./routes/dashboard'));
@@ -58,7 +77,6 @@ io.on('connection', (socket) => {
 const { startCronJobs, computeDeadlineAlerts } = require('./cron/alerts');
 startCronJobs(io);
 
-// Push initial deadline snapshot shortly after boot
 setTimeout(async () => {
   try {
     const snapshot = await computeDeadlineAlerts();
@@ -72,6 +90,22 @@ setTimeout(async () => {
   } catch (_) { /* ignore */ }
 }, 3000);
 
+// Production / unified deploy: serve Vite build from same origin
+if (serveClient) {
+  app.use(express.static(clientDist, { index: false, maxAge: isProd ? '1d' : 0 }));
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+    if (req.path.startsWith('/api') || req.path === '/health') return next();
+    res.sendFile(path.join(clientDist, 'index.html'), (err) => {
+      if (err) next(err);
+    });
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.send('Interview Command Center API is running… (client build not found — run npm run build)');
+  });
+}
+
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}${serveClient ? ' (serving client/dist)' : ' (API only)'}`);
 });

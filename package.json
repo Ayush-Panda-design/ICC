@@ -1,0 +1,17 @@
+{
+  "name": "icc",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interview Command Center — single-service frontend + API",
+  "scripts": {
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "node server/index.js",
+    "dev:server": "npm start --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "seed": "npm run seed --prefix server",
+    "seed:dsa": "npm run seed:dsa --prefix server"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,18 @@
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: icc
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: ICC_ACCESS_PASSWORD
+        sync: false
+      - key: PORT
+        value: 10000
