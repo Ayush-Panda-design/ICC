@@ -111,11 +111,11 @@ const DSATracker = () => {
   const visibleCount = filteredTopics.reduce((n, t) => n + t.problems.length, 0);
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="page max-w-7xl space-y-6">
       <header className="pb-4 border-b border-border space-y-4">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-4">
           <div>
-            <h1 className="text-3xl font-bold mb-1">Striver A2Z Tracker</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold mb-1">Striver A2Z Tracker</h1>
             <p className="text-text-muted">
               Progress checklist on ICC — {stats?.done || 0} / {stats?.total || 474} done
               {stats?.interviewReady ? ' · Interview Ready' : ''}
@@ -215,18 +215,18 @@ const DSATracker = () => {
         {filteredTopics.map((topic) => (
           <div key={topic._id} className="card p-0 overflow-hidden">
             <div
-              className={`p-4 flex items-center justify-between cursor-pointer transition hover:bg-cream-bg ${
+              className={`p-3 sm:p-4 flex items-center justify-between gap-2 cursor-pointer transition hover:bg-cream-bg ${
                 expandedTopics[topic._id] ? 'border-b border-border' : ''
               }`}
               onClick={() => toggleTopic(topic._id)}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                 {expandedTopics[topic._id] ? (
-                  <ChevronDown size={20} className="text-text-muted" />
+                  <ChevronDown size={20} className="text-text-muted shrink-0" />
                 ) : (
-                  <ChevronRight size={20} className="text-text-muted" />
+                  <ChevronRight size={20} className="text-text-muted shrink-0" />
                 )}
-                <h2 className="font-bold text-lg">
+                <h2 className="font-bold text-base sm:text-lg truncate">
                   Step {topic.a2zStep || topic.order}: {topic.name}
                 </h2>
               </div>
@@ -253,11 +253,11 @@ const DSATracker = () => {
                 {topic.problems.map((problem, pIndex) => (
                   <div
                     key={problem._id}
-                    className={`p-3 pl-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-cream-card transition ${
+                    className={`p-3 pl-4 sm:pl-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-cream-card transition ${
                       problem.status === 'Done' ? 'opacity-80' : ''
                     }`}
                   >
-                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                       <button
                         type="button"
                         onClick={() => cycleStatus(problem)}
@@ -266,9 +266,9 @@ const DSATracker = () => {
                       >
                         {getStatusIcon(problem.status)}
                       </button>
-                      <div className="text-text-muted text-sm w-5 shrink-0">{pIndex + 1}.</div>
+                      <div className="text-text-muted text-sm w-5 shrink-0 hidden sm:block">{pIndex + 1}.</div>
                       <span
-                        className={`font-medium dsa-font truncate ${
+                        className={`font-medium dsa-font text-sm sm:text-base break-words ${
                           problem.status === 'Done' ? 'line-through text-text-muted' : ''
                         }`}
                       >
@@ -276,7 +276,7 @@ const DSATracker = () => {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3 pl-7 sm:pl-0">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 pl-7 sm:pl-0">
                       <span className={`text-xs px-2 py-0.5 rounded font-bold ${getDifficultyColor(problem.difficulty)}`}>
                         {problem.difficulty}
                       </span>

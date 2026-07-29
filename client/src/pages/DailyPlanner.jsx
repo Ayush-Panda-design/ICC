@@ -73,10 +73,10 @@ const DailyPlanner = () => {
   if (loading) return <div className="p-8">Loading PDF planner…</div>;
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="page max-w-7xl space-y-6">
       <header className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border pb-4">
         <div>
-          <h1 className="text-3xl font-bold mb-1">Daily Planner</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">Daily Planner</h1>
           <p className="text-text-muted flex items-center gap-2">
             <CalendarIcon size={16} />
             From your Complete Guide — Week {week}

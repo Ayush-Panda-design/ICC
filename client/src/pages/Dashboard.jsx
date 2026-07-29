@@ -140,34 +140,32 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
-      {/* Header */}
-      <header className="flex justify-between items-end pb-4 border-b border-border">
+    <div className="page max-w-7xl space-y-6">
+      <header className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 pb-4 border-b border-border">
         <div>
-          <h1 className="text-3xl font-bold mb-1">Good evening, Ayush</h1>
-          <p className="text-text-muted flex items-center gap-2">
-            <Calendar size={16} />
-            {format(new Date(), 'EEEE, MMMM d, yyyy')} • Phase {performance?.phase || userProgress?.currentPhase || 1}
-            {performance?.theme ? ` • W${performance.weekNumber}: ${performance.theme}` : ''}
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">Good evening, Ayush</h1>
+          <p className="text-text-muted flex items-center gap-2 text-sm sm:text-base">
+            <Calendar size={16} className="shrink-0" />
+            <span className="break-words">
+              {format(new Date(), 'EEEE, MMMM d, yyyy')} • Phase {performance?.phase || userProgress?.currentPhase || 1}
+              {performance?.theme ? ` • W${performance.weekNumber}: ${performance.theme}` : ''}
+            </span>
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="text-right">
-            <p className="text-sm text-text-muted">Current Streak</p>
-            <p className="text-2xl font-bold text-accent-yellow flex items-center gap-1">
-              🔥 {userProgress?.streak || 0} days
-            </p>
-          </div>
+        <div className="text-left sm:text-right shrink-0">
+          <p className="text-sm text-text-muted">Current Streak</p>
+          <p className="text-2xl font-bold text-accent-yellow flex items-center gap-1 sm:justify-end">
+            🔥 {userProgress?.streak || 0} days
+          </p>
         </div>
       </header>
 
-      {/* Urgent Deadline Banner */}
       {urgentCompanies && urgentCompanies.length > 0 && (
-        <div className="bg-accent-red-soft border-l-4 border-accent-red p-4 rounded-r-lg flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="text-accent-red" />
-            <div>
-              <p className="font-bold text-accent-red">Urgent Deadline: {urgentCompanies[0].name}</p>
+        <div className="bg-accent-red-soft border-l-4 border-accent-red p-4 rounded-r-lg flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <AlertTriangle className="text-accent-red shrink-0" />
+            <div className="min-w-0">
+              <p className="font-bold text-accent-red truncate">Urgent Deadline: {urgentCompanies[0].name}</p>
               <p className="text-sm text-accent-red/80">
                 {urgentCompanies[0].role} — {differenceInDays(new Date(urgentCompanies[0].deadline), new Date())} days left
               </p>

@@ -53,12 +53,12 @@ const Applications = () => {
   if (loading) return <div className="p-8">Loading Applications...</div>;
 
   return (
-    <div className="p-6 max-w-[1400px] mx-auto space-y-6">
+    <div className="page max-w-[1400px] space-y-6">
       <header className="border-b border-border pb-4">
-        <h1 className="text-3xl font-bold mb-1 flex items-center gap-2">
-          <Briefcase /> Application Tracker
+        <h1 className="text-2xl sm:text-3xl font-bold mb-1 flex items-center gap-2">
+          <Briefcase className="shrink-0" /> Application Tracker
         </h1>
-        <p className="text-text-muted">
+        <p className="text-text-muted text-sm sm:text-base">
           {stats.total || 0} tracked · {stats.interview || 0} interviews · {stats.offer || 0} offers
         </p>
       </header>
@@ -68,7 +68,7 @@ const Applications = () => {
           value={filters.q}
           onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
           placeholder="Search company"
-          className="px-3 py-2 rounded-lg border border-border bg-cream-bg"
+          className="px-3 py-2 rounded-lg border border-border bg-cream-bg w-full sm:w-auto min-w-0 flex-1 sm:flex-none"
         />
         <select
           value={filters.category}

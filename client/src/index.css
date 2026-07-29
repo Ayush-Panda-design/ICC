@@ -26,6 +26,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .card {
@@ -33,7 +34,13 @@ body {
   border-radius: 1rem;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--color-border);
-  padding: 1.5rem;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
 }
 
 .badge {
@@ -63,4 +70,32 @@ body {
 
 .dsa-font {
   font-family: var(--font-mono);
+}
+
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.2s ease-out;
+}
+
+/* Page shell: tighter padding on phones */
+.page {
+  padding: 1rem;
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .page {
+    padding: 1.5rem;
+  }
 }

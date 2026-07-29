@@ -22,10 +22,10 @@ const Checkpoints = () => {
   const pct = Math.min(100, Math.round((stats.dsaCompleted / (stats.dsaTotal || 474)) * 100));
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-6">
+    <div className="page max-w-5xl space-y-6">
       <header className="border-b border-border pb-4">
-        <h1 className="text-3xl font-bold mb-1 flex items-center gap-2">
-          <Flag className="text-accent-red" /> Am I On The Right Path?
+        <h1 className="text-2xl sm:text-3xl font-bold mb-1 flex items-center gap-2">
+          <Flag className="text-accent-red shrink-0" /> Am I On The Right Path?
         </h1>
         <p className="text-text-muted">Weekly checkpoints from your Complete Guide (PDF §16)</p>
       </header>

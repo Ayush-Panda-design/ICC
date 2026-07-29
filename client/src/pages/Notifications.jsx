@@ -41,17 +41,18 @@ const Notifications = () => {
   if (loading) return <div className="p-8">Loading notifications…</div>;
 
   return (
-    <div className="p-6 max-w-3xl mx-auto space-y-6">
-      <header className="flex items-center justify-between border-b border-border pb-4">
+    <div className="page max-w-3xl space-y-6">
+      <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-2">
-            <Bell /> Notifications
+          <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
+            <Bell className="shrink-0" /> Notifications
           </h1>
-          <p className="text-text-muted">{unread} unread · live from platforms + URL checks</p>
+          <p className="text-text-muted text-sm">{unread} unread · live from platforms + URL checks</p>
         </div>
         <button
+          type="button"
           onClick={markAll}
-          className="px-3 py-2 rounded-lg border border-border text-sm flex items-center gap-2 hover:bg-cream-dark"
+          className="px-3 py-2 rounded-lg border border-border text-sm flex items-center gap-2 hover:bg-cream-dark self-start"
         >
           <CheckCheck size={16} /> Mark all read
         </button>

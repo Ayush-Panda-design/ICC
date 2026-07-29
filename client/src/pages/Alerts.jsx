@@ -207,15 +207,15 @@ const Alerts = () => {
   if (loading) return <div className="p-8">Loading Alerts...</div>;
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-8">
-      <header className="border-b border-border pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div className="page max-w-7xl space-y-8">
+      <header className="border-b border-border pb-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <h1 className="text-3xl font-bold mb-1">Internship Alerts</h1>
-          <p className="text-text-muted">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">Internship Alerts</h1>
+          <p className="text-text-muted text-sm sm:text-base">
             Targeting {companies.length} companies (filtered). Live sync via ATS + Remotive.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={handleHealthCheck}
             disabled={checking}
@@ -240,7 +240,7 @@ const Alerts = () => {
           <Filter size={16} /> Filters
         </div>
         <div className="flex flex-wrap gap-3">
-          <div className="relative flex-1 min-w-[180px]">
+          <div className="relative flex-1 min-w-0 w-full sm:min-w-[180px]">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
             <input
               value={filters.q}
@@ -252,7 +252,7 @@ const Alerts = () => {
           <select
             value={filters.category}
             onChange={(e) => setFilter('category', e.target.value)}
-            className="px-3 py-2 rounded-lg border border-border bg-cream-bg"
+            className="px-3 py-2 rounded-lg border border-border bg-cream-bg w-full sm:w-auto"
           >
             <option value="">All categories</option>
             <option value="Startup">Startup</option>
@@ -263,7 +263,7 @@ const Alerts = () => {
           <select
             value={filters.status}
             onChange={(e) => setFilter('status', e.target.value)}
-            className="px-3 py-2 rounded-lg border border-border bg-cream-bg"
+            className="px-3 py-2 rounded-lg border border-border bg-cream-bg w-full sm:w-auto"
           >
             <option value="">All statuses</option>
             <option value="Not Applied">Not Applied</option>
