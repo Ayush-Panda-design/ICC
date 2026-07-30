@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Basic Maths",
+    "sheetStep": 1,
+    "month": 1,
+    "week": 1,
+    "order": 1,
+    "totalProblems": 13
+  },
+  {
+    "name": "Basic Arrays",
+    "sheetStep": 2,
+    "month": 1,
+    "week": 1,
+    "order": 2,
+    "totalProblems": 4
+  },
+  {
+    "name": "Basic Hashing",
+    "sheetStep": 3,
+    "month": 1,
+    "week": 1,
+    "order": 3,
+    "totalProblems": 3
+  },
+  {
+    "name": "Basic Strings",
+    "sheetStep": 4,
+    "month": 1,
+    "week": 1,
+    "order": 4,
+    "totalProblems": 8
+  },
+  {
+    "name": "Basic Recursion",
+    "sheetStep": 5,
+    "month": 1,
+    "week": 1,
+    "order": 5,
+    "totalProblems": 8
+  },
+  {
+    "name": "Sorting Algorithms",
+    "sheetStep": 6,
+    "month": 1,
+    "week": 2,
+    "order": 6,
+    "totalProblems": 7
+  },
+  {
+    "name": "Arrays",
+    "sheetStep": 7,
+    "month": 1,
+    "week": 1,
+    "order": 7,
+    "totalProblems": 30
+  },
+  {
+    "name": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
+    "sheetStep": 8,
+    "month": 1,
+    "week": 3,
+    "order": 8,
+    "totalProblems": 30
+  },
+  {
+    "name": "Hashing",
+    "sheetStep": 9,
+    "month": 1,
+    "week": 4,
+    "order": 9,
+    "totalProblems": 8
+  },
+  {
+    "name": "Recursion [PatternWise]",
+    "sheetStep": 10,
+    "month": 2,
+    "week": 5,
+    "order": 10,
+    "totalProblems": 19
+  },
+  {
+    "name": "Linked List [Single LL, Doubly LL]",
+    "sheetStep": 11,
+    "month": 2,
+    "week": 6,
+    "order": 11,
+    "totalProblems": 46
+  },
+  {
+    "name": "Bit Manipulation",
+    "sheetStep": 12,
+    "month": 2,
+    "week": 6,
+    "order": 12,
+    "totalProblems": 9
+  },
+  {
+    "name": "Greedy Algorithms",
+    "sheetStep": 13,
+    "month": 2,
+    "week": 7,
+    "order": 13,
+    "totalProblems": 12
+  },
+  {
+    "name": "Sliding Window / 2 Pointer",
+    "sheetStep": 14,
+    "month": 2,
+    "week": 8,
+    "order": 14,
+    "totalProblems": 12
+  },
+  {
+    "name": "Stack / Queues [Implementation, Monotonic Stack]",
+    "sheetStep": 15,
+    "month": 2,
+    "week": 9,
+    "order": 15,
+    "totalProblems": 24
+  },
+  {
+    "name": "Binary Trees [Traversals, Medium and Hard Problems]",
+    "sheetStep": 16,
+    "month": 2,
+    "week": 9,
+    "order": 16,
+    "totalProblems": 31
+  },
+  {
+    "name": "Binary Search Trees",
+    "sheetStep": 17,
+    "month": 3,
+    "week": 10,
+    "order": 17,
+    "totalProblems": 15
+  },
+  {
+    "name": "Heaps",
+    "sheetStep": 18,
+    "month": 3,
+    "week": 11,
+    "order": 18,
+    "totalProblems": 11
+  },
+  {
+    "name": "Graphs [Traversal, Shortest Path, MST, Additional]",
+    "sheetStep": 19,
+    "month": 3,
+    "week": 11,
+    "order": 19,
+    "totalProblems": 50
+  },
+  {
+    "name": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
+    "sheetStep": 20,
+    "month": 4,
+    "week": 12,
+    "order": 20,
+    "totalProblems": 60
+  },
+  {
+    "name": "Tries",
+    "sheetStep": 21,
+    "month": 4,
+    "week": 14,
+    "order": 21,
+    "totalProblems": 7
+  },
+  {
+    "name": "Strings (Advanced Algo)",
+    "sheetStep": 22,
+    "month": 4,
+    "week": 14,
+    "order": 22,
+    "totalProblems": 9
+  },
+  {
+    "name": "Maths",
+    "sheetStep": 23,
+    "month": 4,
+    "week": 14,
+    "order": 23,
+    "totalProblems": 19
+  },
+  {
+    "name": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
+    "sheetStep": 24,
+    "month": 3,
+    "week": 11,
+    "order": 24,
+    "totalProblems": 45
+  }
+]

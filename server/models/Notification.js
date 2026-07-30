@@ -3,7 +3,18 @@ const mongoose = require('mongoose');
 const NotificationSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ['opening:new', 'deadline', 'url:broken', 'url:fixed', 'sync', 'info'],
+    enum: [
+      'opening:new',
+      'deadline',
+      'url:broken',
+      'url:fixed',
+      'sync',
+      'info',
+      'coach',
+      'missed_day',
+      'streak_break',
+      'behind_checkpoint'
+    ],
     default: 'info'
   },
   title: { type: String, required: true },

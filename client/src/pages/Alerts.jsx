@@ -5,7 +5,7 @@ import {
   Search, Filter, Briefcase
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { applyToCompany, buildCompanyQuery, getWorkingApplyUrl, apiFetch } from '../api/companies';
+import { openApplyUrl, markCompanyApplied, buildCompanyQuery, getWorkingApplyUrl, apiFetch } from '../api/companies';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
 const Alerts = () => {
@@ -44,17 +44,37 @@ const Alerts = () => {
 
   useAlertsSocket({ onRefresh: fetchCompanies, silent: true });
 
-  const handleApply = async (company) => {
+  const handleOpenApply = (company) => {
     try {
-      const result = await applyToCompany(company);
+      const result = openApplyUrl(company);
       if (result.warned) {
-        toast('Opened platform hub / fallback — listing may not be company-specific', { icon: '⚠️' });
+        toast('Opened platform hub / fallback — mark Applied manually only after you submit', { icon: '⚠️', duration: 5000 });
       } else {
-        toast.success(`Applied to ${company.name}`);
+        toast(`Opened apply page for ${company.name}. Status stays Not Applied until you mark it.`, { icon: '🔗', duration: 5000 });
       }
-      fetchCompanies();
+      toast((t) => (
+        <span className="flex items-center gap-2 text-sm">
+          Submitted the application?
+          <button
+            type="button"
+            className="px-2 py-0.5 rounded bg-accent-green text-white text-xs font-bold"
+            onClick={async () => {
+              try {
+                await markCompanyApplied(company);
+                toast.dismiss(t.id);
+                toast.success(`Marked Applied: ${company.name}`);
+                fetchCompanies();
+              } catch (e) {
+                toast.error(e.message || 'Could not mark Applied');
+              }
+            }}
+          >
+            Mark Applied
+          </button>
+        </span>
+      ), { duration: 15000 });
     } catch (e) {
-      toast.error(e.message || 'Failed to update status');
+      toast.error(e.message || 'No apply link');
     }
   };
 
@@ -193,10 +213,10 @@ const Alerts = () => {
             </>
           ) : (
             <button
-              onClick={() => handleApply(company)}
+              onClick={() => handleOpenApply(company)}
               className="px-6 py-2 bg-text-primary text-white rounded-lg font-medium shadow-sm hover:bg-text-primary/90 transition flex items-center justify-center gap-2"
             >
-              Apply Now <ExternalLink size={16} />
+              Open Apply Link <ExternalLink size={16} />
             </button>
           )}
         </div>

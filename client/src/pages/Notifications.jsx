@@ -47,7 +47,7 @@ const Notifications = () => {
           <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
             <Bell className="shrink-0" /> Notifications
           </h1>
-          <p className="text-text-muted text-sm">{unread} unread · live from platforms + URL checks</p>
+          <p className="text-text-muted text-sm">{unread} unread · openings, deadlines & coach check-ins</p>
         </div>
         <button
           type="button"
@@ -91,7 +91,7 @@ const Notifications = () => {
           </button>
         ))}
         {items.length === 0 && (
-          <p className="text-text-muted italic">No notifications yet. Hit Sync Now on Alerts.</p>
+          <p className="text-text-muted italic">No notifications yet. Coach check-ins and Sync Now will appear here.</p>
         )}
       </div>
     </div>

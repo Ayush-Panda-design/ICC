@@ -75,7 +75,31 @@ function startCronJobs(io) {
     }
   }, { timezone: 'Asia/Kolkata' });
 
-  console.log('Cron jobs scheduled (sync 6h, url health 2h, daily alerts 8:00 IST)');
+  // 9:00 AM IST — coach / accountability pass (missed days, streak, behind checkpoint)
+  cron.schedule('0 9 * * *', async () => {
+    console.log('[cron] Running coach evaluation…');
+    try {
+      const { getCoachToday } = require('../services/coach');
+      const payload = await getCoachToday({ persist: true });
+      if (io) {
+        io.emit('coach:daily', {
+          messages: payload.messages,
+          stats: payload.stats,
+          generatedAt: new Date()
+        });
+        for (const m of payload.messages) {
+          if (m.type === 'missed_day' || m.type === 'streak_break' || m.type === 'behind_checkpoint') {
+            io.emit('coach:alert', m);
+          }
+        }
+      }
+      console.log('[cron] Coach:', payload.messages.map((m) => m.type).join(', ') || 'none', '| created', payload.notificationsCreated);
+    } catch (err) {
+      console.error('[cron] Coach error:', err.message);
+    }
+  }, { timezone: 'Asia/Kolkata' });
+
+  console.log('Cron jobs scheduled (sync 6h, url health 2h, daily alerts 8:00 IST, coach 9:00 IST)');
 }
 
 module.exports = { startCronJobs, computeDeadlineAlerts };

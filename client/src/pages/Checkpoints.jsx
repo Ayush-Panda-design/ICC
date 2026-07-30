@@ -19,7 +19,7 @@ const Checkpoints = () => {
   if (!data) return <div className="p-8">No checkpoint data</div>;
 
   const { checkpoints, stats, current } = data;
-  const pct = Math.min(100, Math.round((stats.dsaCompleted / (stats.dsaTotal || 474)) * 100));
+  const pct = Math.min(100, Math.round((stats.dsaCompleted / (stats.dsaTotal || 480)) * 100));
 
   return (
     <div className="page max-w-5xl space-y-6">
@@ -33,7 +33,7 @@ const Checkpoints = () => {
       <section className="card grid grid-cols-2 md:grid-cols-4 gap-4">
         <div>
           <p className="text-xs text-text-muted">DSA</p>
-          <p className="text-2xl font-bold">{stats.dsaCompleted}/{stats.dsaTotal || 474}</p>
+          <p className="text-2xl font-bold">{stats.dsaCompleted}/{stats.dsaTotal || 480}</p>
           <div className="h-2 bg-cream-dark rounded-full mt-2 overflow-hidden">
             <div className="h-full bg-accent-green" style={{ width: `${pct}%` }} />
           </div>
@@ -58,7 +58,7 @@ const Checkpoints = () => {
           <h2 className="font-bold text-lg flex items-center gap-2">
             <Target size={18} /> This checkpoint — Week {current.weekNumber}
           </h2>
-          <p className="text-sm text-text-muted mb-2">{current.theme} · Target {current.dsaTarget}/{stats.dsaTotal || 474}</p>
+          <p className="text-sm text-text-muted mb-2">{current.theme} · Target {current.dsaTarget}/{stats.dsaTotal || 480}</p>
           <p className="text-sm"><b>Must-have:</b> {(current.mustHaveDone || []).join(' · ')}</p>
           <p className="text-sm text-accent-red mt-1"><b>Red flag if:</b> {(current.redFlags || []).join(' · ')}</p>
         </section>

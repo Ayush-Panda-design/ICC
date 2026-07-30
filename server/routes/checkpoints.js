@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
     today.setUTCHours(0, 0, 0, 0);
     const todayTask = await DailyTask.findOne({
       date: { $gte: today, $lte: new Date(today.getTime() + 86400000 - 1) }
-    }) || await DailyTask.findOne({ date: new Date(Date.UTC(2026, 6, 29)) });
+    }) || await DailyTask.findOne({ date: new Date(Date.UTC(2026, 6, 30)) });
 
     const currentWeek = todayTask?.weekNumber || 1;
     const current = enriched.find((c) => c.weekNumber === currentWeek) || enriched[0];
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
       current,
       stats: {
         dsaCompleted: dsaDone,
-        dsaTotal: 474,
+        dsaTotal: 480,
         applicationsSent: progress?.applicationsSent || apps,
         mocksCompleted: progress?.mocksCompleted || 0,
         streak: progress?.streak || 0,

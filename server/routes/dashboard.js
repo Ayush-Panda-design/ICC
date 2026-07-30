@@ -24,11 +24,11 @@ function endOfDayUTC(d = new Date()) {
 }
 
 async function getTodayTask() {
-  // Prefer real calendar today; fall back to guide start (Jul 29 2026) for this project timeline
+  // Prefer real calendar today; fall back to guide start (Jul 30 2026) for this project timeline
   const now = startOfDayUTC();
   let task = await DailyTask.findOne({ date: { $gte: now, $lte: endOfDayUTC(now) } });
   if (!task) {
-    const guide = new Date(Date.UTC(2026, 6, 29));
+    const guide = new Date(Date.UTC(2026, 6, 30));
     task = await DailyTask.findOne({ date: { $gte: guide, $lte: endOfDayUTC(guide) } });
   }
   if (!task) {
@@ -87,7 +87,7 @@ router.get('/today', async (req, res) => {
         phase: task?.phase,
         theme: task?.theme,
         dsaCompleted: dsaDone,
-        dsaTarget: checkpoint?.dsaTarget || 474,
+        dsaTarget: checkpoint?.dsaTarget || 480,
         applicationsSent: appsCount,
         mocksCompleted: userProgress?.mocksCompleted || 0,
         weekTasksTotal: weekTasks.length,

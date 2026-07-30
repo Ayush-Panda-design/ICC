@@ -1,0 +1,40 @@
+{
+  "sources": [
+    "Blind 75 (Blind forum / FAANG engineer list)",
+    "NeetCode 150 (superset; ~85% FAANG match in 2025–26 analyses)",
+    "2025–26 pattern reports: two pointers, sliding window, hash maps, BS, tree DFS/BFS cover ~50%+ of new-grad loops",
+    "Company bias notes: Google→graphs/trees; Amazon/Microsoft→backtracking; Meta→arrays/strings/two pointers"
+  ],
+  "dsaStack": {
+    "core": "TUF+ Basic to Advanced (435)",
+    "gapPack": "FAANG OA Gap Pack (45) — Blind75/NeetCode titles missing from TUF+",
+    "total": 480
+  },
+  "nonDsaMustHaves": [
+    {
+      "item": "Timed OA drills",
+      "detail": "2–3 mediums in 90 minutes, weekly from Oct (Sat OA drills in planner)"
+    },
+    {
+      "item": "20+ mock interviews",
+      "detail": "Pramp / interviewing.io / peers — communication under pressure is scored"
+    },
+    {
+      "item": "8 STAR stories",
+      "detail": "Map to Amazon Leadership Principles; Googleyness for Google"
+    },
+    {
+      "item": "Intern-level system design",
+      "detail": "URL shortener, rate limiter, chat, feed — 5 designs cold"
+    },
+    {
+      "item": "Core CS fluency",
+      "detail": "OS / DBMS / CN / OOP — required for service + many product rounds"
+    },
+    {
+      "item": "Live project storytelling",
+      "detail": "ShipFlow / Relvion architecture in 2 minutes with trade-offs"
+    }
+  ],
+  "decReadyDefinition": "480 sheet done (or ≥95%) + OA pack P0 done + 20 mocks + 1 timed OA/week for 6 weeks + 8 STAR stories + 5 SD designs explainable"
+}

@@ -5,7 +5,7 @@ const DSAProblem = require('../models/DSAProblem');
 const UserProgress = require('../models/UserProgress');
 const DailyTask = require('../models/DailyTask');
 
-const TOTAL = 474;
+const TOTAL = 480;
 
 function startOfDayUTC(d = new Date()) {
   const x = new Date(d);
@@ -23,7 +23,7 @@ async function currentWeekNumber() {
   const now = startOfDayUTC();
   let task = await DailyTask.findOne({ date: { $gte: now, $lte: endOfDayUTC(now) } });
   if (!task) {
-    const guide = new Date(Date.UTC(2026, 6, 29));
+    const guide = new Date(Date.UTC(2026, 6, 30));
     task = await DailyTask.findOne({ date: { $gte: guide, $lte: endOfDayUTC(guide) } });
   }
   return task?.weekNumber || 1;
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
     const weekNum = await currentWeekNumber();
 
     const topics = await DSATopic.find().sort({ order: 1 });
-    let problems = await DSAProblem.find().sort({ a2zStep: 1, orderInStep: 1 });
+    let problems = await DSAProblem.find().sort({ sheetStep: 1, orderInStep: 1 });
 
     if (track === 'startup_service') {
       problems = problems.filter((p) => p.track === 'startup_service' || p.track === 'both');
@@ -86,7 +86,7 @@ router.get('/', async (req, res) => {
       })
       .filter(Boolean);
 
-    const interviewReady = sepDone >= 230 || sepDone >= Math.floor(sepSet.length * 0.85);
+    const interviewReady = sepDone >= 223 || sepDone >= Math.floor(sepSet.length * 0.85);
 
     res.json({
       topics: groupedTopics,

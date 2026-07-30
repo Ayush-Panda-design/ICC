@@ -9,7 +9,7 @@ if (!fs.existsSync(dataDir)) {
 // 1. Companies — PDF Batches A–F (180+), no Dummy fillers
 require('./generate-companies');
 
-// 2. DSA Topics (Striver A2Z)
+// 2. DSA Topics (legacy/unused — real generation lives in generate-tuf-sheet.js)
 const topics = [
   { name: "Arrays — Logic Building", totalProblems: 15, month: 1, week: 1 },
   { name: "Arrays — FAQs Medium", totalProblems: 12, month: 1, week: 1 },

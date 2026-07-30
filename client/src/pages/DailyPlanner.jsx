@@ -119,7 +119,7 @@ const DailyPlanner = () => {
             <div>
               <h2 className="font-bold text-lg">{checkpoint.theme || `Week ${week} checkpoint`}</h2>
               <p className="text-sm text-text-muted mb-2">
-                DSA target {checkpoint.dsaTarget}/474 · You: {checkpoint.dsaActual}/474 ·{' '}
+                DSA target {checkpoint.dsaTarget}/480 · You: {checkpoint.dsaActual}/480 ·{' '}
                 <span className={checkpoint.onTrack ? 'text-accent-green font-bold' : 'text-accent-red font-bold'}>
                   {checkpoint.onTrack ? 'ON TRACK' : 'BEHIND'}
                 </span>

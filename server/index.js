@@ -82,6 +82,7 @@ app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/tasks', require('./routes/tasks'));
 app.use('/api/checkpoints', require('./routes/checkpoints'));
 app.use('/api/dsa', require('./routes/dsa'));
+app.use('/api/coach', require('./routes/coach'));
 
 io.on('connection', (socket) => {
   console.log('Socket connected:', socket.id);

@@ -19,25 +19,36 @@ export function getWorkingApplyUrl(company) {
   return primary;
 }
 
-export async function applyToCompany(company) {
-  const id = company._id || company.id;
+/** Open the apply page only — does NOT change company status. */
+export function openApplyUrl(company) {
   const url = getWorkingApplyUrl(company);
-  const res = await apiFetch(`/api/companies/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify({ status: 'Applied' })
-  });
-  if (!res.ok) throw new Error('Failed to mark applied');
-  const data = await res.json();
-
   if (!url) {
     throw Object.assign(new Error('No working apply link — run Sync / Health Check'), { code: 'NO_URL' });
   }
   window.open(url, '_blank', 'noopener,noreferrer');
   return {
-    ...data,
-    warned: company.urlStatus === 'broken' || isGenericSearch(company.applyUrl),
-    openedUrl: url
+    openedUrl: url,
+    warned: company.urlStatus === 'broken' || isGenericSearch(company.applyUrl || company.url)
   };
+}
+
+/** Manually mark Applied (only when user confirms they actually applied). */
+export async function markCompanyApplied(company) {
+  const id = company._id || company.id;
+  const res = await apiFetch(`/api/companies/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ status: 'Applied' })
+  });
+  if (!res.ok) throw new Error('Failed to mark applied');
+  return res.json();
+}
+
+/**
+ * @deprecated Prefer openApplyUrl + markCompanyApplied separately.
+ * Kept for compatibility: now only opens URL (no status change).
+ */
+export async function applyToCompany(company) {
+  return openApplyUrl(company);
 }
 
 export function buildCompanyQuery(filters) {

@@ -44,12 +44,12 @@ router.get('/', async (req, res) => {
 
 router.get('/today', async (req, res) => {
   try {
-    // Planner start date context: prefer Jul 29 2026 if "today" has no plan in other years
+    // Planner start date context: prefer Jul 30 2026 if "today" has no plan in other years
     let day = parseDateParam(req.query.date) || startOfDay();
     let task = await DailyTask.findOne({ date: { $gte: day, $lte: endOfDay(day) } });
     if (!task) {
-      // Fallback to guide start day for demo (Jul 29 2026)
-      const guideDay = new Date(Date.UTC(2026, 6, 29));
+      // Fallback to guide start day for demo (Jul 30 2026)
+      const guideDay = new Date(Date.UTC(2026, 6, 30));
       task = await DailyTask.findOne({ date: { $gte: guideDay, $lte: endOfDay(guideDay) } });
       day = guideDay;
     }

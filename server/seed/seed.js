@@ -47,7 +47,7 @@ const seedData = async () => {
       semester: '5th Sem CS',
       portfolioUrl: 'https://ayushdev-five.vercel.app/',
       githubUrl: 'https://github.com/Ayush-Panda-design',
-      startDate: new Date('2026-07-29T00:00:00Z')
+      startDate: new Date('2026-07-30T00:00:00Z')
     });
 
     await UserProgress.create({
@@ -57,7 +57,7 @@ const seedData = async () => {
       applicationsSent: 0,
       currentPhase: 1,
       streak: 0,
-      lastActiveDate: new Date('2026-07-29T00:00:00Z')
+      lastActiveDate: new Date('2026-07-30T00:00:00Z')
     });
     console.log('User and Progress seeded.');
 
@@ -84,16 +84,16 @@ const seedData = async () => {
     await SyllabusItem.insertMany(syllabusData);
     console.log('Syllabus seeded.');
 
-    // 5. Seed DSA Topics & Problems (Striver A2Z — 474)
-    require('./generate-a2z');
-    const topicsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'a2z-topics.json'), 'utf-8'));
+    // 5. Seed DSA Topics & Problems (TUF+ Basic to Advanced paid batch — 435)
+    require('./generate-tuf-sheet');
+    const topicsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'tuf-topics.json'), 'utf-8'));
     const createdTopics = {};
     for (const topicData of topicsData) {
       const t = await DSATopic.create(topicData);
       createdTopics[topicData.name] = t._id;
     }
 
-    const problemsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'a2z-problems.json'), 'utf-8'));
+    const problemsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'tuf-problems.json'), 'utf-8'));
     const problemsToInsert = problemsData.map((p) => ({
       topicId: createdTopics[p.topicName],
       name: p.name,
@@ -103,11 +103,11 @@ const seedData = async () => {
       targetWeek: p.targetWeek,
       targetPhase: p.targetPhase,
       orderInStep: p.orderInStep,
-      a2zStep: p.a2zStep,
+      sheetStep: p.sheetStep,
       completedAt: p.status === 'Done' ? new Date() : undefined
     }));
     await DSAProblem.insertMany(problemsToInsert);
-    console.log(`DSA seeded: ${topicsData.length} A2Z steps, ${problemsToInsert.length} problems.`);
+    console.log(`DSA seeded: ${topicsData.length} TUF+ sheet steps, ${problemsToInsert.length} problems.`);
 
     console.log('Data Import Success');
     process.exit();

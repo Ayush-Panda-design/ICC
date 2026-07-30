@@ -1,6 +1,6 @@
 /**
  * Reseed DSA topics/problems only (preserves companies, apps).
- * Also refreshes planner checkpoints scaled to 474.
+ * Also refreshes planner checkpoints scaled to 435 (TUF+ paid batch sheet).
  * Usage: npm run seed:dsa
  */
 require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
@@ -14,7 +14,7 @@ const UserProgress = require('../models/UserProgress');
 const DailyTask = require('../models/DailyTask');
 const WeeklyCheckpoint = require('../models/WeeklyCheckpoint');
 
-require('./generate-a2z');
+require('./generate-tuf-sheet');
 require('./generate-planner');
 
 async function main() {
@@ -22,8 +22,8 @@ async function main() {
   await DSATopic.deleteMany();
   await DSAProblem.deleteMany();
 
-  const topicsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'a2z-topics.json'), 'utf-8'));
-  const problemsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'a2z-problems.json'), 'utf-8'));
+  const topicsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'tuf-topics.json'), 'utf-8'));
+  const problemsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'tuf-problems.json'), 'utf-8'));
 
   const created = {};
   for (const t of topicsData) {
@@ -40,7 +40,7 @@ async function main() {
     targetWeek: p.targetWeek,
     targetPhase: p.targetPhase,
     orderInStep: p.orderInStep,
-    a2zStep: p.a2zStep,
+    sheetStep: p.sheetStep,
     completedAt: p.status === 'Done' ? new Date() : undefined
   }));
   await DSAProblem.insertMany(docs);
@@ -48,7 +48,7 @@ async function main() {
   const done = await DSAProblem.countDocuments({ status: 'Done' });
   await UserProgress.findOneAndUpdate({}, { dsaCompleted: done });
 
-  // Refresh planner targets to 474 scale (preserve completion flags where possible by full replace of planner only)
+  // Refresh planner targets to 435 scale (preserve completion flags where possible by full replace of planner only)
   await DailyTask.deleteMany();
   await WeeklyCheckpoint.deleteMany();
   const dailyTasks = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'daily-tasks.json'), 'utf-8'));

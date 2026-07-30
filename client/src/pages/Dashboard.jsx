@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { format, differenceInDays } from 'date-fns';
-import { CheckCircle, AlertTriangle, Clock, Target, Calendar, Award, Briefcase, ChevronRight, ExternalLink } from 'lucide-react';
+import { CheckCircle, AlertTriangle, Clock, Target, Calendar, Award, Briefcase, ChevronRight, ExternalLink, MessageSquareWarning } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import toast from 'react-hot-toast';
-import { applyToCompany } from '../api/companies';
+import { openApplyUrl, markCompanyApplied } from '../api/companies';
 import { apiFetch } from '../api/auth';
 import { useAlertsSocket } from '../hooks/useAlertsSocket';
 
+const COACH_TOAST_KEY = 'icc_coach_toast_session';
+
 const Dashboard = () => {
   const [data, setData] = useState(null);
+  const [coach, setCoach] = useState(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState('');
 
@@ -21,11 +24,18 @@ const Dashboard = () => {
     return response.json();
   };
 
+  const loadCoach = async () => {
+    const res = await apiFetch('/api/coach/today');
+    if (!res.ok) return null;
+    return res.json();
+  };
+
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const payload = await loadDashboard();
+        const [payload, coachPayload] = await Promise.all([loadDashboard(), loadCoach()]);
         setData(payload);
+        setCoach(coachPayload);
         setLoadError('');
         setLoading(false);
         if (payload.urgentCompanies && payload.urgentCompanies.length > 0) {
@@ -33,6 +43,17 @@ const Dashboard = () => {
             icon: '🚀',
             duration: 5000
           });
+        }
+        const stats = coachPayload?.stats;
+        if (stats && (stats.missedYesterday || stats.behindCheckpoint || stats.streakBroken)) {
+          if (!sessionStorage.getItem(COACH_TOAST_KEY)) {
+            sessionStorage.setItem(COACH_TOAST_KEY, '1');
+            const top = coachPayload.messages?.[0];
+            toast(top?.body || top?.title || 'Coach: catch up on today\'s plan', {
+              icon: '⚠️',
+              duration: 8000
+            });
+          }
         }
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -48,6 +69,7 @@ const Dashboard = () => {
     silent: true,
     onRefresh: () => {
       loadDashboard().then(setData).catch(() => {});
+      loadCoach().then(setCoach).catch(() => {});
     }
   });
 
@@ -55,11 +77,36 @@ const Dashboard = () => {
     const company = data?.urgentCompanies?.[0];
     if (!company) return;
     try {
-      await applyToCompany(company);
-      toast.success(`Marked applied: ${company.name}`);
-      setData(await loadDashboard());
-    } catch {
-      toast.error('Failed to apply');
+      const result = openApplyUrl(company);
+      toast(
+        result.warned
+          ? `Opened ${company.name} — listing may be a hub. Mark Applied manually when done.`
+          : `Opened apply page for ${company.name}. Mark Applied only after you submit.`,
+        { icon: '🔗', duration: 5000 }
+      );
+      toast((t) => (
+        <span className="flex items-center gap-2 text-sm">
+          Applied for real?
+          <button
+            type="button"
+            className="px-2 py-0.5 rounded bg-accent-green text-white text-xs font-bold"
+            onClick={async () => {
+              try {
+                await markCompanyApplied(company);
+                toast.dismiss(t.id);
+                toast.success(`Marked Applied: ${company.name}`);
+                setData(await loadDashboard());
+              } catch {
+                toast.error('Could not mark Applied');
+              }
+            }}
+          >
+            Mark Applied
+          </button>
+        </span>
+      ), { duration: 12000 });
+    } catch (e) {
+      toast.error(e.message || 'No apply link');
     }
   };
 
@@ -136,7 +183,7 @@ const Dashboard = () => {
 
   const progressData = [
     { name: 'Completed', value: userProgress?.dsaCompleted || 0, color: '#2A9D8F' },
-    { name: 'Remaining', value: 474 - (userProgress?.dsaCompleted || 0), color: '#F5EDE0' }
+    { name: 'Remaining', value: 480 - (userProgress?.dsaCompleted || 0), color: '#F5EDE0' }
   ];
 
   return (
@@ -160,6 +207,50 @@ const Dashboard = () => {
         </div>
       </header>
 
+      {coach?.messages?.length > 0 && (
+        <section
+          className={`card border-l-4 ${
+            coach.stats?.missedYesterday || coach.stats?.streakBroken || coach.stats?.behindCheckpoint
+              ? 'border-accent-red'
+              : 'border-accent-green'
+          }`}
+        >
+          <div className="flex items-start gap-3">
+            <MessageSquareWarning
+              className={`shrink-0 mt-0.5 ${
+                coach.stats?.onTrack ? 'text-accent-green' : 'text-accent-red'
+              }`}
+              size={22}
+            />
+            <div className="min-w-0 flex-1 space-y-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="font-bold text-lg">Your Coach</h2>
+                {coach.stats?.missedYesterday && (
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-accent-red-soft text-accent-red">
+                    Missed yesterday
+                  </span>
+                )}
+                {coach.stats?.behindCheckpoint && (
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-accent-yellow-soft text-accent-yellow">
+                    Behind by {coach.stats.dsaGap}
+                  </span>
+                )}
+                <span className="text-xs text-text-muted">
+                  Streak {coach.stats?.streak || 0} · DSA {coach.stats?.dsaDone || 0}/{coach.stats?.dsaTarget || 480}
+                  {coach.stats?.geminiEnabled ? ' · AI coach on' : ''}
+                </span>
+              </div>
+              {coach.messages.map((m, i) => (
+                <div key={`${m.type}-${i}`}>
+                  <p className="font-semibold text-sm">{m.title}</p>
+                  <p className="text-sm text-text-muted">{m.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {urgentCompanies && urgentCompanies.length > 0 && (
         <div className="bg-accent-red-soft border-l-4 border-accent-red p-4 rounded-r-lg flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <div className="flex items-center gap-3 min-w-0">
@@ -175,7 +266,7 @@ const Dashboard = () => {
             onClick={handleUrgentApply}
             className="px-4 py-2 bg-accent-red text-white rounded-lg font-medium shadow-sm hover:bg-accent-red/90 transition"
           >
-            Apply Now
+            Open Apply Link
           </button>
         </div>
       )}
@@ -359,7 +450,7 @@ const Dashboard = () => {
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                 <span className="text-3xl font-bold text-text-primary">{userProgress?.dsaCompleted || 0}</span>
-                <span className="text-xs text-text-muted">/ 474</span>
+                <span className="text-xs text-text-muted">/ 480</span>
               </div>
             </div>
             

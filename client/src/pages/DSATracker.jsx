@@ -77,7 +77,7 @@ const DSATracker = () => {
     }
   };
 
-  if (loading && !stats) return <div className="p-8">Loading A2Z sheet…</div>;
+  if (loading && !stats) return <div className="p-8">Loading DSA sheet…</div>;
 
   const filteredTopics = topics
     .map((t) => ({
@@ -115,9 +115,9 @@ const DSATracker = () => {
       <header className="pb-4 border-b border-border space-y-4">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold mb-1">Striver A2Z Tracker</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold mb-1">DSA Tracker (TUF+)</h1>
             <p className="text-text-muted">
-              Progress checklist on ICC — {stats?.done || 0} / {stats?.total || 474} done
+              Progress checklist on ICC — {stats?.done || 0} / {stats?.total || 480} done
               {stats?.interviewReady ? ' · Interview Ready' : ''}
             </p>
           </div>
@@ -206,7 +206,7 @@ const DSATracker = () => {
           Showing {visibleCount} problems
           {track === 'startup_service' && ' · Startup + service interview path (by Sep 28)'}
           {track === 'faang' && ' · Product / FAANG foundation (through full sheet)'}
-          {track === 'full' && ' · All A2Z steps'}
+          {track === 'full' && ' · All sheet steps'}
           {track === 'week' && ` · Planner targetWeek ${stats?.currentWeek || ''}`}
         </p>
       </header>
@@ -227,7 +227,7 @@ const DSATracker = () => {
                   <ChevronRight size={20} className="text-text-muted shrink-0" />
                 )}
                 <h2 className="font-bold text-base sm:text-lg truncate">
-                  Step {topic.a2zStep || topic.order}: {topic.name}
+                  Step {topic.sheetStep || topic.order}: {topic.name}
                 </h2>
               </div>
               <div className="flex items-center gap-4">

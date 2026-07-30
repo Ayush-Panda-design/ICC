@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const DSATopicSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  a2zStep: { type: Number },
+  sheetStep: { type: Number },
   month: { type: Number, required: true },
   week: { type: Number, required: true },
   order: { type: Number, required: true },

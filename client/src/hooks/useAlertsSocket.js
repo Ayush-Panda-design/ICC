@@ -98,6 +98,21 @@ export function useAlertsSocket({ onRefresh, silent = false } = {}) {
       onRefresh?.();
     };
 
+    const onCoachAlert = (m) => {
+      if (!silent) {
+        bump(1);
+        toast(m?.title || 'Coach check-in', {
+          icon: m?.type === 'missed_day' || m?.type === 'streak_break' ? '⚠️' : '🎯',
+          duration: 7000
+        });
+      } else {
+        bump(1);
+      }
+      onRefresh?.();
+    };
+
+    const onCoachDaily = () => onRefresh?.();
+
     socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
     socket.on('alert:daily', onDaily);
@@ -107,6 +122,8 @@ export function useAlertsSocket({ onRefresh, silent = false } = {}) {
     socket.on('notification:new', onNotification);
     socket.on('application:updated', onAppUpdated);
     socket.on('sync:complete', onSyncComplete);
+    socket.on('coach:alert', onCoachAlert);
+    socket.on('coach:daily', onCoachDaily);
 
     if (socket.connected) setConnected(true);
 
@@ -120,6 +137,8 @@ export function useAlertsSocket({ onRefresh, silent = false } = {}) {
       socket.off('notification:new', onNotification);
       socket.off('application:updated', onAppUpdated);
       socket.off('sync:complete', onSyncComplete);
+      socket.off('coach:alert', onCoachAlert);
+      socket.off('coach:daily', onCoachDaily);
     };
   }, [bump, onRefresh, silent]);
 

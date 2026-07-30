@@ -1,0 +1,371 @@
+[
+  {
+    "name": "Contains Duplicate",
+    "difficulty": "Easy",
+    "pattern": "Hash Set",
+    "why": "Warm-up OA / phone screen staple (Blind 75). Hash set O(n).",
+    "companies": ["Amazon", "Google", "Microsoft", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "Product of Array Except Self",
+    "difficulty": "Medium",
+    "pattern": "Prefix / Suffix",
+    "why": "Extremely common Amazon OA + Meta phone. Prefix×suffix, no division.",
+    "companies": ["Amazon", "Meta", "Apple", "Microsoft"],
+    "priority": "P0"
+  },
+  {
+    "name": "Group Anagrams",
+    "difficulty": "Medium",
+    "pattern": "Hash Map",
+    "why": "Blind 75 / NeetCode 150 core. Sorted-key or count-key bucketing.",
+    "companies": ["Amazon", "Meta", "Apple"],
+    "priority": "P0"
+  },
+  {
+    "name": "Top K Frequent Elements",
+    "difficulty": "Medium",
+    "pattern": "Heap / Bucket Sort",
+    "why": "Top-K pattern appears across FAANG; heap or bucket O(n).",
+    "companies": ["Amazon", "Meta", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Encode and Decode Strings",
+    "difficulty": "Medium",
+    "pattern": "String Encoding",
+    "why": "NeetCode classic; tests edge-case thinking (any character).",
+    "companies": ["Google", "Meta"],
+    "priority": "P1"
+  },
+  {
+    "name": "Container With Most Water",
+    "difficulty": "Medium",
+    "pattern": "Two Pointers",
+    "why": "Tier-1 two-pointer; Meta-heavy per 2025–26 reports.",
+    "companies": ["Meta", "Amazon", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Merge Intervals",
+    "difficulty": "Medium",
+    "pattern": "Intervals",
+    "why": "Blind 75 must-know; interval sweep is its own FAANG pattern.",
+    "companies": ["Amazon", "Google", "Microsoft", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "Meeting Rooms II",
+    "difficulty": "Medium",
+    "pattern": "Intervals / Sweep",
+    "why": "Chronological sweep → peak rooms. Common Meta/Amazon follow-up to Meeting Rooms.",
+    "companies": ["Meta", "Amazon", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "pattern": "Matrix",
+    "why": "In-place markers; frequent array/matrix round.",
+    "companies": ["Amazon", "Microsoft", "Apple"],
+    "priority": "P0"
+  },
+  {
+    "name": "Permutation in String",
+    "difficulty": "Medium",
+    "pattern": "Sliding Window",
+    "why": "Fixed window + frequency match; OA-friendly.",
+    "companies": ["Microsoft", "Amazon"],
+    "priority": "P1"
+  },
+  {
+    "name": "Decode String",
+    "difficulty": "Medium",
+    "pattern": "Stack",
+    "why": "Nested k[body] stack; NeetCode 150 stack expansion.",
+    "companies": ["Google", "Amazon", "Bloomberg"],
+    "priority": "P0"
+  },
+  {
+    "name": "Evaluate Reverse Polish Notation",
+    "difficulty": "Medium",
+    "pattern": "Stack",
+    "why": "Operand stack / postfix; clean stack fluency check.",
+    "companies": ["Amazon", "LinkedIn"],
+    "priority": "P1"
+  },
+  {
+    "name": "Daily Temperatures",
+    "difficulty": "Medium",
+    "pattern": "Monotonic Stack",
+    "why": "Monotonic stack poster child; same family as Next Greater.",
+    "companies": ["Amazon", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "Longest Valid Parentheses",
+    "difficulty": "Hard",
+    "pattern": "Stack / DP",
+    "why": "Hard stack/DP hybrid; screens strong candidates.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P1"
+  },
+  {
+    "name": "Reorder List",
+    "difficulty": "Medium",
+    "pattern": "Linked List",
+    "why": "Middle + reverse + merge; classic multi-step LL.",
+    "companies": ["Meta", "Amazon", "Microsoft"],
+    "priority": "P0"
+  },
+  {
+    "name": "Swap Nodes in Pairs",
+    "difficulty": "Medium",
+    "pattern": "Linked List",
+    "why": "Pointer surgery under pressure; frequent phone-screen LL.",
+    "companies": ["Amazon", "Microsoft", "Bloomberg"],
+    "priority": "P1"
+  },
+  {
+    "name": "Invert Binary Tree",
+    "difficulty": "Easy",
+    "pattern": "Tree DFS",
+    "why": "Google lore + actual easy tree fluency check.",
+    "companies": ["Google", "Amazon", "Apple"],
+    "priority": "P0"
+  },
+  {
+    "name": "Same Tree",
+    "difficulty": "Easy",
+    "pattern": "Tree DFS",
+    "why": "Lockstep DFS; builds into Subtree / Symmetric variants.",
+    "companies": ["Amazon", "Apple"],
+    "priority": "P1"
+  },
+  {
+    "name": "Subtree of Another Tree",
+    "difficulty": "Easy",
+    "pattern": "Tree DFS",
+    "why": "Blind 75; composition of Same Tree.",
+    "companies": ["Amazon", "Microsoft"],
+    "priority": "P1"
+  },
+  {
+    "name": "Binary Tree Right Side View",
+    "difficulty": "Medium",
+    "pattern": "Tree BFS",
+    "why": "Level-batch BFS; last node per level.",
+    "companies": ["Amazon", "Meta", "Microsoft"],
+    "priority": "P0"
+  },
+  {
+    "name": "Clone Graph",
+    "difficulty": "Medium",
+    "pattern": "Graph DFS/BFS",
+    "why": "Blind 75 graph clone with map; Meta/Amazon favorite.",
+    "companies": ["Meta", "Amazon", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Pacific Atlantic Water Flow",
+    "difficulty": "Medium",
+    "pattern": "Multi-source DFS/BFS",
+    "why": "NeetCode graph staple; flood from borders + intersect.",
+    "companies": ["Google", "Amazon"],
+    "priority": "P0"
+  },
+  {
+    "name": "Number of Connected Components in an Undirected Graph",
+    "difficulty": "Medium",
+    "pattern": "Union-Find / DFS",
+    "why": "DSU counting; pairs with Redundant Connection.",
+    "companies": ["Amazon", "Google", "LinkedIn"],
+    "priority": "P0"
+  },
+  {
+    "name": "Redundant Connection",
+    "difficulty": "Medium",
+    "pattern": "Union-Find",
+    "why": "First cycle-closing edge; NeetCode graph gap vs Blind 75.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P1"
+  },
+  {
+    "name": "Graph Valid Tree",
+    "difficulty": "Medium",
+    "pattern": "Union-Find / Graph",
+    "why": "Connected + n-1 edges + no cycle.",
+    "companies": ["Google", "LinkedIn"],
+    "priority": "P1"
+  },
+  {
+    "name": "Network Delay Time",
+    "difficulty": "Medium",
+    "pattern": "Dijkstra",
+    "why": "Shortest path under weights; Google/Amazon graph depth.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Cheapest Flights Within K Stops",
+    "difficulty": "Medium",
+    "pattern": "Bellman-Ford / BFS",
+    "why": "Bounded hops; common Google/Amazon graph variant.",
+    "companies": ["Google", "Amazon"],
+    "priority": "P0"
+  },
+  {
+    "name": "Jump Game II",
+    "difficulty": "Medium",
+    "pattern": "Greedy",
+    "why": "Blind 75 gap vs Jump Game I; min jumps greedy BFS-by-levels.",
+    "companies": ["Amazon", "Google", "Microsoft"],
+    "priority": "P0"
+  },
+  {
+    "name": "Gas Station",
+    "difficulty": "Medium",
+    "pattern": "Greedy",
+    "why": "NeetCode greedy; total gas ≥ cost ⇒ unique start exists.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Partition Labels",
+    "difficulty": "Medium",
+    "pattern": "Greedy",
+    "why": "Amazon-leaning greedy; last-occurrence extend.",
+    "companies": ["Amazon", "Meta"],
+    "priority": "P1"
+  },
+  {
+    "name": "Word Break",
+    "difficulty": "Medium",
+    "pattern": "1D DP",
+    "why": "Blind 75 DP; dictionary split — OA + onsite staple.",
+    "companies": ["Amazon", "Google", "Meta", "Apple"],
+    "priority": "P0"
+  },
+  {
+    "name": "Decode Ways",
+    "difficulty": "Medium",
+    "pattern": "1D DP",
+    "why": "1/2-digit decode DP; frequent Amazon/Google.",
+    "companies": ["Amazon", "Google", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "House Robber II",
+    "difficulty": "Medium",
+    "pattern": "1D DP",
+    "why": "Circular house robber; Blind 75 follow-up.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P1"
+  },
+  {
+    "name": "Maximal Square",
+    "difficulty": "Medium",
+    "pattern": "2D DP",
+    "why": "Grid DP min(up,left,diag)+1; Meta/Google 2D DP.",
+    "companies": ["Google", "Meta", "Apple"],
+    "priority": "P1"
+  },
+  {
+    "name": "Permutations",
+    "difficulty": "Medium",
+    "pattern": "Backtracking",
+    "why": "Amazon/Microsoft backtracking-heavy (15× average). Must-have.",
+    "companies": ["Amazon", "Microsoft", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "Combination Sum II",
+    "difficulty": "Medium",
+    "pattern": "Backtracking",
+    "why": "Already partly on TUF; keep explicit OA pack revisit if marked Done only once.",
+    "companies": ["Amazon", "Microsoft"],
+    "priority": "P2",
+    "skipIfOnSheet": true
+  },
+  {
+    "name": "Find Median from Data Stream",
+    "difficulty": "Hard",
+    "pattern": "Two Heaps",
+    "why": "Two-heap pattern; NeetCode heap expansion; hard but high signal.",
+    "companies": ["Amazon", "Google", "Microsoft"],
+    "priority": "P0"
+  },
+  {
+    "name": "K Closest Points to Origin",
+    "difficulty": "Medium",
+    "pattern": "Heap",
+    "why": "Top-K heap; Amazon OA classic.",
+    "companies": ["Amazon", "Meta", "Google"],
+    "priority": "P0"
+  },
+  {
+    "name": "Task Scheduler",
+    "difficulty": "Medium",
+    "pattern": "Heap / Greedy",
+    "why": "Max-heap + cooldown frame; Amazon/Meta.",
+    "companies": ["Amazon", "Meta"],
+    "priority": "P0"
+  },
+  {
+    "name": "Number of 1 Bits",
+    "difficulty": "Easy",
+    "pattern": "Bit Manipulation",
+    "why": "Hamming weight; Blind 75 bit section.",
+    "companies": ["Amazon", "Apple", "Microsoft"],
+    "priority": "P1"
+  },
+  {
+    "name": "Counting Bits",
+    "difficulty": "Easy",
+    "pattern": "Bit / DP",
+    "why": "dp[i]=dp[i>>1]+(i&1); neat bit+DP combo.",
+    "companies": ["Amazon", "Apple"],
+    "priority": "P1"
+  },
+  {
+    "name": "Reverse Bits",
+    "difficulty": "Easy",
+    "pattern": "Bit Manipulation",
+    "why": "Blind 75 bit fluency.",
+    "companies": ["Apple", "Amazon"],
+    "priority": "P1"
+  },
+  {
+    "name": "Sum of Two Integers",
+    "difficulty": "Medium",
+    "pattern": "Bit Manipulation",
+    "why": "XOR + carry without +; interview trick question still asked.",
+    "companies": ["Amazon", "Microsoft"],
+    "priority": "P1"
+  },
+  {
+    "name": "Min Cost Climbing Stairs",
+    "difficulty": "Easy",
+    "pattern": "1D DP",
+    "why": "DP warm-up sibling of Climbing Stairs.",
+    "companies": ["Amazon", "Google"],
+    "priority": "P2"
+  },
+  {
+    "name": "01 Matrix",
+    "difficulty": "Medium",
+    "pattern": "Multi-source BFS",
+    "why": "Distance to nearest 0; multi-source BFS (you have nearest-1 variant — practice this exact LC).",
+    "companies": ["Amazon", "Google"],
+    "priority": "P1"
+  },
+  {
+    "name": "Word Search II",
+    "difficulty": "Hard",
+    "pattern": "Trie + Backtracking",
+    "why": "Hard trie board search; Google/Meta hard round signal.",
+    "companies": ["Google", "Amazon", "Uber"],
+    "priority": "P1"
+  }
+]

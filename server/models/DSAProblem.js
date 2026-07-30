@@ -16,7 +16,7 @@ const DSAProblemSchema = new mongoose.Schema({
   targetWeek: { type: Number },
   targetPhase: { type: Number },
   orderInStep: { type: Number },
-  a2zStep: { type: Number }
+  sheetStep: { type: Number }
 }, { timestamps: true });
 
 DSAProblemSchema.index({ topicId: 1, orderInStep: 1 });
