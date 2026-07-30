@@ -27,3 +27,6 @@ Thumbs.db
 # Coverage / misc
 coverage/
 .cache/
+
+# Generated PDFs
+*.pdf
