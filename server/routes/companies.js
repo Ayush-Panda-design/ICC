@@ -6,6 +6,8 @@ const UserProgress = require('../models/UserProgress');
 const { runJobSync, repairUrlsFromCatalog, runUrlHealthCheck } = require('../services/jobSync');
 const { healthCheckCompany } = require('../services/jobSync/urlRepair');
 const { computeDeadlineAlerts } = require('../cron/alerts');
+const { computePortfolioMatch, buildApplyKit } = require('../services/portfolioMatch');
+const { refreshCompanyMatchScores } = require('../seed/ensurePrepContent');
 
 function getIo(req) {
   return req.app.get('io');
@@ -94,6 +96,62 @@ router.get('/hubs', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// GET /api/companies/for-you — startup-first queue for Ayush portfolio fit
+router.get('/for-you', async (req, res) => {
+  try {
+    const limit = Math.min(Number(req.query.limit) || 25, 60);
+    const companies = await Company.find({
+      status: 'Not Applied',
+      category: { $in: ['Startup', 'Product'] }
+    })
+      .sort({ matchScore: -1, isOpen: -1, deadline: 1 })
+      .limit(limit);
+
+    res.json({
+      focus: 'Startups + product roles matching your shipped fullstack/AI portfolio',
+      portfolio: 'https://ayushdev-five.vercel.app/',
+      companies,
+      tip: 'Lead with ShipFlow / Relvion for AI startups; Votora for realtime; EdinForm for SaaS. DSA OA only if asked — full TUF+ continues in parallel.'
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// GET /api/companies/:id/apply-kit — pitch + links ready to paste
+router.get('/:id/apply-kit', async (req, res) => {
+  try {
+    const company = await Company.findById(req.params.id);
+    if (!company) return res.status(404).json({ message: 'Not found' });
+    const kit = buildApplyKit(company);
+    res.json({
+      company: {
+        _id: company._id,
+        name: company.name,
+        role: company.role,
+        category: company.category,
+        matchScore: company.matchScore ?? computePortfolioMatch(company)
+      },
+      kit
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// POST /api/companies/refresh-matches — recompute portfolio match scores
+router.post('/refresh-matches', async (req, res) => {
+  try {
+    const result = await refreshCompanyMatchScores();
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error.message || 'Refresh failed' });
   }
 });
 

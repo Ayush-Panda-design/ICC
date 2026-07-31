@@ -19,9 +19,11 @@ const Notification = require('../models/Notification');
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/interview-command-center';
 
-const seedData = async () => {
+const seedData = async ({ exit = true } = {}) => {
   try {
-    await mongoose.connect(MONGO_URI);
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(MONGO_URI);
+    }
     console.log('MongoDB Connected...');
 
     // Clear existing data
@@ -109,12 +111,21 @@ const seedData = async () => {
     await DSAProblem.insertMany(problemsToInsert);
     console.log(`DSA seeded: ${topicsData.length} TUF+ sheet steps, ${problemsToInsert.length} problems.`);
 
+    // Pattern tags, OA gap rows (additive), design/STAR/Core CS, portfolio match scores
+    const { ensurePrepContent } = require('./ensurePrepContent');
+    await ensurePrepContent();
+
     console.log('Data Import Success');
-    process.exit();
+    if (exit) process.exit(0);
   } catch (error) {
     console.error(`Error with data import: ${error}`);
-    process.exit(1);
+    if (exit) process.exit(1);
+    throw error;
   }
 };
 
-seedData();
+if (require.main === module) {
+  seedData();
+}
+
+module.exports = { seedData };

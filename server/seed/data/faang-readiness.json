@@ -1,40 +1,46 @@
 {
   "sources": [
-    "Blind 75 (Blind forum / FAANG engineer list)",
-    "NeetCode 150 (superset; ~85% FAANG match in 2025–26 analyses)",
-    "2025–26 pattern reports: two pointers, sliding window, hash maps, BS, tree DFS/BFS cover ~50%+ of new-grad loops",
-    "Company bias notes: Google→graphs/trees; Amazon/Microsoft→backtracking; Meta→arrays/strings/two pointers"
+    "Blind 75 / NeetCode 150 — pattern foundation (not a substitute for TUF+)",
+    "Full TUF+ Basic→Advanced batch — MANDATORY completion for this user",
+    "FAANG OA Gap Pack — titles missing from sheet, additive only",
+    "2025–26 hiring: Apply → OA → phone → onsite; startups weight portfolio; FAANG weights DSA + STAR"
   ],
   "dsaStack": {
-    "core": "TUF+ Basic to Advanced (435)",
-    "gapPack": "FAANG OA Gap Pack (45) — Blind75/NeetCode titles missing from TUF+",
-    "total": 480
+    "core": "TUF+ Basic to Advanced (full sheet — do every problem)",
+    "gapPack": "FAANG OA Gap Pack — Blind75/NeetCode titles missing from TUF+",
+    "overlays": "Pattern mastery, Core OA staples, Google Hard day, spaced revisit — order & rigor, never skip sheet",
+    "practiceWhere": "Solve on TUF / LeetCode; log hardness gate in ICC"
+  },
+  "volumeTruth": {
+    "notNeeded": "1000–2000 random LeetCode",
+    "needed": "100% TUF+ with depth + company OA packs + mocks",
+    "patternTargets": "Master ~15 patterns while finishing the sheet"
   },
   "nonDsaMustHaves": [
     {
       "item": "Timed OA drills",
-      "detail": "2–3 mediums in 90 minutes, weekly from Oct (Sat OA drills in planner)"
+      "detail": "2–3 mediums in 90 minutes on LeetCode/TUF; log in Dojo"
     },
     {
-      "item": "20+ mock interviews",
-      "detail": "Pramp / interviewing.io / peers — communication under pressure is scored"
+      "item": "Mock interviews",
+      "detail": "Rubric 1–4 code/comms/complexity; 2/week in late phase"
     },
     {
-      "item": "8 STAR stories",
-      "detail": "Map to Amazon Leadership Principles; Googleyness for Google"
+      "item": "STAR stories",
+      "detail": "12 stories mapped to Google / Microsoft / Amazon LPs — portfolio-backed"
     },
     {
-      "item": "Intern-level system design",
-      "detail": "URL shortener, rate limiter, chat, feed — 5 designs cold"
+      "item": "LLD + HLD drills",
+      "detail": "20 LLD + 15 HLD with checklist rubrics"
     },
     {
-      "item": "Core CS fluency",
-      "detail": "OS / DBMS / CN / OOP — required for service + many product rounds"
+      "item": "Core CS oral",
+      "detail": "OS / DBMS / CN / OOP self-scored oral quizzes"
     },
     {
-      "item": "Live project storytelling",
-      "detail": "ShipFlow / Relvion architecture in 2 minutes with trade-offs"
+      "item": "Startup applications now",
+      "detail": "Portfolio-fit queue (ShipFlow, Relvion, EdinForm, Votora); FAANG when sheet+mocks ready"
     }
   ],
-  "decReadyDefinition": "480 sheet done (or ≥95%) + OA pack P0 done + 20 mocks + 1 timed OA/week for 6 weeks + 8 STAR stories + 5 SD designs explainable"
+  "decReadyDefinition": "100% TUF+ done (hardness-gated) + OA packs practiced + 20 mocks + STAR polished + 5 SD designs cold + Core CS strong"
 }

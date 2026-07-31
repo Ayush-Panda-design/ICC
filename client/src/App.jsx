@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import {
-  Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag, LogOut, Menu, X
+  Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag, LogOut, Menu, X, Swords
 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -12,6 +12,7 @@ import DSATracker from './pages/DSATracker';
 import Applications from './pages/Applications';
 import Notifications from './pages/Notifications';
 import Checkpoints from './pages/Checkpoints';
+import Dojo from './pages/Dojo';
 import LoginGate from './pages/LoginGate';
 import { useAlertsSocket } from './hooks/useAlertsSocket';
 import { checkAuthStatus, clearToken, getToken } from './api/auth';
@@ -20,10 +21,11 @@ const NAV = [
   { to: '/', end: true, label: 'Dashboard', icon: Home },
   { to: '/planner', label: 'Daily Planner', icon: CalendarIcon },
   { to: '/checkpoints', label: 'Checkpoints', icon: Flag },
+  { to: '/dsa', label: 'DSA Tracker', icon: Code },
+  { to: '/dojo', label: 'Dojo', icon: Swords },
   { to: '/alerts', label: 'Alerts', icon: Bell, badge: true },
   { to: '/applications', label: 'Applications', icon: Briefcase },
-  { to: '/notifications', label: 'Notifications', icon: Inbox, badge: true },
-  { to: '/dsa', label: 'DSA Tracker', icon: Code }
+  { to: '/notifications', label: 'Notifications', icon: Inbox, badge: true }
 ];
 
 const SidebarNav = ({ badgeCount, clearBadge, onNavigate, onLogout, connected }) => (
@@ -218,6 +220,7 @@ function App() {
           <Route path="/applications" element={<Applications />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/dsa" element={<DSATracker />} />
+          <Route path="/dojo" element={<Dojo />} />
         </Routes>
       </Layout>
       <Toaster position="bottom-center" containerStyle={{ bottom: 16 }} />

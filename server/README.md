@@ -23,10 +23,12 @@ Copy `server/.env.example` → `server/.env` (`MONGO_URI`, `ICC_ACCESS_PASSWORD`
    - `NODE_ENV=production`
    - `MONGO_URI` — MongoDB Atlas connection string
    - `ICC_ACCESS_PASSWORD` — unlock password for the app
-5. After first deploy, seed once (Render Shell or locally against Atlas):
+5. **Data:** On first boot, if Atlas is empty the server auto-seeds DSA + planner.
+   To force a full reseed (wipes progress):
 
 ```bash
-cd server && npm run seed
+# Render Shell, or locally with Atlas MONGO_URI in server/.env
+npm run seed
 ```
 
 Optional: use `render.yaml` Blueprint for the same settings.

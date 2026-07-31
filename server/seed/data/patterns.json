@@ -1,0 +1,122 @@
+[
+  {
+    "id": "arrays-hashing",
+    "name": "Arrays & Hashing",
+    "why": "OA warm-up + phone screen staple. ~25% of early rounds.",
+    "companies": ["Amazon", "Meta", "Microsoft", "Google"],
+    "masteryTarget": 12,
+    "keywords": ["array", "hash", "prefix", "anagram", "duplicate", "product of array", "top k frequent", "encode"]
+  },
+  {
+    "id": "two-pointers",
+    "name": "Two Pointers",
+    "why": "Meta-heavy; pairs with sliding window for string/array mediums.",
+    "companies": ["Meta", "Amazon", "Google"],
+    "masteryTarget": 10,
+    "keywords": ["two pointer", "palindrome", "container", "3sum", "trapping rain", "remove"]
+  },
+  {
+    "id": "sliding-window",
+    "name": "Sliding Window",
+    "why": "Fixed/variable window appears constantly in OAs.",
+    "companies": ["Amazon", "Microsoft", "Google", "Meta"],
+    "masteryTarget": 10,
+    "keywords": ["sliding", "window", "substring", "permutation in string", "longest repeating"]
+  },
+  {
+    "id": "stack",
+    "name": "Stack / Monotonic Stack",
+    "why": "Next greater, valid paren, decode string — high frequency.",
+    "companies": ["Amazon", "Google", "Meta"],
+    "masteryTarget": 8,
+    "keywords": ["stack", "monotonic", "parentheses", "decode string", "daily temperature", "asteroid"]
+  },
+  {
+    "id": "binary-search",
+    "name": "Binary Search",
+    "why": "Including search-on-answer — Google loves predicate BS.",
+    "companies": ["Google", "Amazon", "Microsoft"],
+    "masteryTarget": 10,
+    "keywords": ["binary search", "search", "rotated", "koko", "capacity", "median"]
+  },
+  {
+    "id": "linked-list",
+    "name": "Linked List",
+    "why": "Phone screens love pointer surgery under time pressure.",
+    "companies": ["Amazon", "Microsoft", "Meta"],
+    "masteryTarget": 8,
+    "keywords": ["linked list", "cycle", "reverse", "merge", "reorder", "swap nodes"]
+  },
+  {
+    "id": "trees",
+    "name": "Trees (DFS/BFS)",
+    "why": "Google/Amazon over-index on trees. Must be automatic.",
+    "companies": ["Google", "Amazon", "Meta", "Microsoft"],
+    "masteryTarget": 15,
+    "keywords": ["tree", "bst", "lca", "diameter", "path sum", "serialize", "right side", "level order"]
+  },
+  {
+    "id": "graphs",
+    "name": "Graphs (BFS/DFS/UF/Dijkstra)",
+    "why": "Google's heaviest bias. Complete every TUF+ graph step.",
+    "companies": ["Google", "Amazon", "Meta"],
+    "masteryTarget": 15,
+    "keywords": ["graph", "bfs", "dfs", "union", "dijkstra", "topo", "island", "clone graph", "course", "network delay", "cheapest flight"]
+  },
+  {
+    "id": "heap",
+    "name": "Heap / Priority Queue",
+    "why": "Top-K and scheduling — Amazon OA classics.",
+    "companies": ["Amazon", "Meta", "Google", "Microsoft"],
+    "masteryTarget": 8,
+    "keywords": ["heap", "priority", "top k", "median", "task scheduler", "k closest", "merge k"]
+  },
+  {
+    "id": "backtracking",
+    "name": "Backtracking",
+    "why": "Amazon & Microsoft ask ~15× average. Finish all TUF+ BT.",
+    "companies": ["Amazon", "Microsoft", "Meta"],
+    "masteryTarget": 10,
+    "keywords": ["backtrack", "permutation", "combination", "subset", "n-queen", "word search", "sudoku"]
+  },
+  {
+    "id": "dp-1d",
+    "name": "1D Dynamic Programming",
+    "why": "OA + onsite staple. Depth > volume — still do full TUF+ DP.",
+    "companies": ["Amazon", "Google", "Meta", "Apple"],
+    "masteryTarget": 12,
+    "keywords": ["dp", "climb", "house robber", "word break", "decode ways", "coin", "lis", "jump"]
+  },
+  {
+    "id": "dp-2d",
+    "name": "2D / Grid DP",
+    "why": "Google/Meta signal for stronger candidates.",
+    "companies": ["Google", "Meta", "Amazon"],
+    "masteryTarget": 10,
+    "keywords": ["2d dp", "grid", "unique path", "edit distance", "maximal square", "lcs", "knapsack"]
+  },
+  {
+    "id": "greedy",
+    "name": "Greedy",
+    "why": "Jump game, gas station, intervals — pattern recognition under clock.",
+    "companies": ["Amazon", "Google", "Microsoft"],
+    "masteryTarget": 8,
+    "keywords": ["greedy", "jump", "gas", "interval", "partition label", "candy"]
+  },
+  {
+    "id": "intervals",
+    "name": "Intervals",
+    "why": "Merge / meeting rooms — Blind 75 must-know family.",
+    "companies": ["Amazon", "Google", "Meta", "Microsoft"],
+    "masteryTarget": 6,
+    "keywords": ["interval", "meeting", "merge interval", "insert interval", "non-overlapping"]
+  },
+  {
+    "id": "tries-bits",
+    "name": "Tries & Bits",
+    "why": "Hard-round signal (Word Search II) + Blind 75 bit section.",
+    "companies": ["Google", "Amazon", "Apple", "Microsoft"],
+    "masteryTarget": 6,
+    "keywords": ["trie", "bit", "xor", "hamming", "prefix tree"]
+  }
+]

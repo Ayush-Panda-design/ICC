@@ -54,11 +54,39 @@ app.use(authMiddleware);
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/interview-command-center';
 
+async function ensureSeeded() {
+  const DSAProblem = require('./models/DSAProblem');
+  const DailyTask = require('./models/DailyTask');
+  const [problems, days] = await Promise.all([
+    DSAProblem.countDocuments(),
+    DailyTask.countDocuments()
+  ]);
+  if (problems > 0 && days > 0) {
+    console.log(`DB ready: ${problems} DSA problems, ${days} daily tasks`);
+  } else {
+    console.log('[seed] Empty DB detected (deploy/Atlas) — importing planner + DSA…');
+    const { seedData } = require('./seed/seed');
+    await seedData({ exit: false });
+  }
+  // Always enrich TUF+ metadata + prep decks (idempotent; keeps all TUF+ rows)
+  try {
+    const { ensurePrepContent } = require('./seed/ensurePrepContent');
+    await ensurePrepContent();
+  } catch (err) {
+    console.error('[prep] ensurePrepContent failed:', err.message || err);
+  }
+}
+
 let mongoReady = false;
 mongoose.connect(MONGO_URI)
-  .then(() => {
+  .then(async () => {
     mongoReady = true;
     console.log('MongoDB connected successfully');
+    try {
+      await ensureSeeded();
+    } catch (err) {
+      console.error('[seed] Auto-seed failed:', err.message || err);
+    }
   })
   .catch((err) => {
     mongoReady = false;
@@ -82,6 +110,7 @@ app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/tasks', require('./routes/tasks'));
 app.use('/api/checkpoints', require('./routes/checkpoints'));
 app.use('/api/dsa', require('./routes/dsa'));
+app.use('/api/prep', require('./routes/prep'));
 app.use('/api/coach', require('./routes/coach'));
 
 io.on('connection', (socket) => {
