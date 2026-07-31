@@ -7,6 +7,8 @@
     "start": "node index.js",
     "seed": "node seed/seed.js",
     "seed:dsa": "node seed/seed-dsa.js",
+    "link:leetcode": "node seed/link-leetcode.js",
+    "add:college-gap": "node seed/add-college-gap.js",
     "generate:companies": "node seed/generate-companies.js",
     "generate:tuf-sheet": "node seed/generate-tuf-sheet.js",
     "test": "echo \"Error: no test specified\" && exit 1"

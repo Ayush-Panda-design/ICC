@@ -162,11 +162,15 @@ const Alerts = () => {
               </span>
             )}
             <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${bgBadge}`}>{company.category}</span>
-            {company.isOpen && (
+            {company.isOpen ? (
               <span className="text-xs px-2 py-0.5 rounded-full font-bold bg-accent-green-soft text-accent-green">
                 Open now
               </span>
-            )}
+            ) : /closed/i.test(company.window || '') ? (
+              <span className="text-xs px-2 py-0.5 rounded-full font-bold bg-accent-red-soft text-accent-red">
+                Closed
+              </span>
+            ) : null}
             {company.urlStatus && company.urlStatus !== 'unknown' && (
               <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${urlBadge}`}>
                 Link: {company.urlStatus}
@@ -216,7 +220,12 @@ const Alerts = () => {
               onClick={() => handleOpenApply(company)}
               className="px-6 py-2 bg-text-primary text-white rounded-lg font-medium shadow-sm hover:bg-text-primary/90 transition flex items-center justify-center gap-2"
             >
-              Open Apply Link <ExternalLink size={16} />
+              {company.isOpen
+                ? 'Apply now'
+                : /closed/i.test(company.window || '')
+                  ? 'View careers (closed)'
+                  : 'View careers'}{' '}
+              <ExternalLink size={16} />
             </button>
           )}
         </div>

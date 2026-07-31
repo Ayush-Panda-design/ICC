@@ -111,6 +111,7 @@ app.use('/api/tasks', require('./routes/tasks'));
 app.use('/api/checkpoints', require('./routes/checkpoints'));
 app.use('/api/dsa', require('./routes/dsa'));
 app.use('/api/prep', require('./routes/prep'));
+app.use('/api/notices', require('./routes/notices'));
 app.use('/api/coach', require('./routes/coach'));
 
 io.on('connection', (socket) => {

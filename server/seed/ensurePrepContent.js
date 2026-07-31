@@ -186,8 +186,38 @@ async function ensurePrepContent() {
   const enrich = await enrichDsaMetadata();
   const decks = await seedPrepDecksIfEmpty();
   const matches = await refreshCompanyMatchScores();
-  console.log('[prep] DSA enrich', enrich, 'decks', decks, 'matches', matches);
-  return { enrich, decks, matches };
+  let leetcode = null;
+  try {
+    const { linkProblemsInDb } = require('./link-leetcode');
+    leetcode = await linkProblemsInDb();
+  } catch (err) {
+    console.error('[prep] leetcode link failed:', err.message || err);
+  }
+  let collegeGap = null;
+  try {
+    const { upsertProblems, scheduleOnPlanner } = require('./add-college-gap');
+    const DSATopic = require('../models/DSATopic');
+    let topic = await DSATopic.findOne({ name: /College Gap/i });
+    if (!topic) {
+      const maxOrder = await DSATopic.find().sort({ order: -1 }).limit(1);
+      const order = (maxOrder[0]?.order || 24) + 1;
+      topic = await DSATopic.create({
+        name: 'College Gap Pack (LC missing)',
+        order,
+        sheetStep: order,
+        month: 5,
+        week: 20,
+        totalProblems: 18
+      });
+    }
+    const probs = await upsertProblems(topic);
+    const sched = await scheduleOnPlanner();
+    collegeGap = { probs, sched };
+  } catch (err) {
+    console.error('[prep] college gap failed:', err.message || err);
+  }
+  console.log('[prep] DSA enrich', enrich, 'decks', decks, 'matches', matches, 'leetcode', leetcode, 'collegeGap', collegeGap);
+  return { enrich, decks, matches, leetcode, collegeGap };
 }
 
 module.exports = {

@@ -36,6 +36,19 @@ function startCronJobs(io) {
     }
   });
 
+  // Every 2 hours — FAANG/manual careers watch (mid-cycle opens)
+  cron.schedule('10 */2 * * *', async () => {
+    console.log('[cron] Careers watch (dynamic FAANG/manual)…');
+    try {
+      const { syncCareersWatch } = require('../services/jobSync/careersWatch');
+      const { pushNotification } = require('../services/jobSync/urlRepair');
+      const summary = await syncCareersWatch(io, { pushNotification });
+      console.log('[cron] Careers watch:', summary.watched, 'watched,', summary.opened, 'opened,', summary.samples);
+    } catch (err) {
+      console.error('[cron] Careers watch error:', err.message);
+    }
+  });
+
   // Every 2 hours — URL health pass
   cron.schedule('30 */2 * * *', async () => {
     console.log('[cron] URL health check…');
@@ -99,7 +112,26 @@ function startCronJobs(io) {
     }
   }, { timezone: 'Asia/Kolkata' });
 
-  console.log('Cron jobs scheduled (sync 6h, url health 2h, daily alerts 8:00 IST, coach 9:00 IST)');
+  // 8:15 AM IST — refresh Notice Board AI hiring brief
+  cron.schedule('15 8 * * *', async () => {
+    console.log('[cron] Refreshing notice hiring brief…');
+    try {
+      const { getNoticeBoard } = require('../services/notices');
+      const board = await getNoticeBoard({ forceBrief: true, limit: 40 });
+      if (io) {
+        io.emit('notice:brief', {
+          headline: board.brief?.headline,
+          asOf: board.brief?.asOf,
+          openCount: board.openings?.filter((o) => o.isOpen).length || 0
+        });
+      }
+      console.log('[cron] Notice brief:', board.brief?.source, board.brief?.headline?.slice(0, 60));
+    } catch (err) {
+      console.error('[cron] Notice brief error:', err.message);
+    }
+  }, { timezone: 'Asia/Kolkata' });
+
+  console.log('Cron jobs scheduled (sync 6h, careers watch 2h, url health 2h, daily alerts 8:00 IST, coach 9:00 IST, notices 8:15 IST)');
 }
 
 module.exports = { startCronJobs, computeDeadlineAlerts };

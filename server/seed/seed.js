@@ -106,6 +106,7 @@ const seedData = async ({ exit = true } = {}) => {
       targetPhase: p.targetPhase,
       orderInStep: p.orderInStep,
       sheetStep: p.sheetStep,
+      url: p.url || undefined,
       completedAt: p.status === 'Done' ? new Date() : undefined
     }));
     await DSAProblem.insertMany(problemsToInsert);

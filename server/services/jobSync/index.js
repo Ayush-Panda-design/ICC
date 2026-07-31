@@ -8,6 +8,7 @@ const {
 const { checkUrl } = require('./urlHealth');
 const { pushNotification, repairUrlsFromCatalog, runUrlHealthCheck } = require('./urlRepair');
 const { getLiveHubDefinitions } = require('./liveHubs');
+const { syncCareersWatch } = require('./careersWatch');
 
 async function syncCompanyBoard(company) {
   let roles = [];
@@ -277,7 +278,7 @@ async function runJobSync(io, { repair = true, healthSample = 25 } = {}) {
     }
   }
 
-  const remotiveEvents = await syncRemotiveIntoDb(io);
+    const remotiveEvents = await syncRemotiveIntoDb(io);
   for (const ev of remotiveEvents) {
     allEvents.push(ev);
     if (ev.type === 'opening:new') {
@@ -288,6 +289,23 @@ async function runJobSync(io, { repair = true, healthSample = 25 } = {}) {
         url: ev.role?.url
       });
     }
+  }
+
+  // Dynamic FAANG / manual careers watch (Google HTML, Amazon JSON, etc.)
+  try {
+    const watch = await syncCareersWatch(io, { pushNotification });
+    summary.careersWatch = watch;
+    summary.opened += watch.opened || 0;
+    summary.closed += watch.closed || 0;
+    summary.synced += watch.watched || 0;
+    for (const s of watch.samples || []) {
+      if (s.isOpen && s.top) {
+        summary.newOpenings.push({ name: s.name, title: s.top, url: null });
+      }
+    }
+    if (watch.errors?.length) summary.errors.push(...watch.errors);
+  } catch (err) {
+    summary.errors.push({ name: 'careersWatch', error: err.message });
   }
 
   // Spot-check apply URLs so broken ones get fallbacks
@@ -301,4 +319,11 @@ async function runJobSync(io, { repair = true, healthSample = 25 } = {}) {
   return summary;
 }
 
-module.exports = { runJobSync, syncCompanyBoard, syncPlatformHubs, repairUrlsFromCatalog, runUrlHealthCheck };
+module.exports = {
+  runJobSync,
+  syncCompanyBoard,
+  syncPlatformHubs,
+  repairUrlsFromCatalog,
+  runUrlHealthCheck,
+  syncCareersWatch
+};

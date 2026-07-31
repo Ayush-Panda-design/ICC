@@ -41,7 +41,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 4,
-    "sheetStep": 1
+    "sheetStep": 1,
+    "url": "https://leetcode.com/problems/palindrome-number/"
   },
   {
     "topicName": "Basic Maths",
@@ -250,7 +251,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 3,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/largest-odd-number-in-string/"
   },
   {
     "topicName": "Basic Strings",
@@ -261,7 +263,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 4,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/longest-common-prefix/"
   },
   {
     "topicName": "Basic Strings",
@@ -272,7 +275,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 5,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/isomorphic-strings/"
   },
   {
     "topicName": "Basic Strings",
@@ -283,7 +287,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 6,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/rotate-string/"
   },
   {
     "topicName": "Basic Strings",
@@ -294,7 +299,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 7,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/valid-anagram/"
   },
   {
     "topicName": "Basic Strings",
@@ -305,7 +311,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 8,
-    "sheetStep": 4
+    "sheetStep": 4,
+    "url": "https://leetcode.com/problems/sort-characters-by-frequency/"
   },
   {
     "topicName": "Basic Recursion",
@@ -393,7 +400,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 8,
-    "sheetStep": 5
+    "sheetStep": 5,
+    "url": "https://leetcode.com/problems/fibonacci-number/"
   },
   {
     "topicName": "Sorting Algorithms",
@@ -547,7 +555,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 7,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/move-zeroes/"
   },
   {
     "topicName": "Arrays",
@@ -558,7 +567,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 8,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
   },
   {
     "topicName": "Arrays",
@@ -569,7 +579,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 9,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/missing-number/"
   },
   {
     "topicName": "Arrays",
@@ -602,7 +613,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 12,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/majority-element/"
   },
   {
     "topicName": "Arrays",
@@ -613,7 +625,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 13,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/"
   },
   {
     "topicName": "Arrays",
@@ -624,7 +637,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 14,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/rearrange-array-elements-by-sign/"
   },
   {
     "topicName": "Arrays",
@@ -635,7 +649,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 15,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/spiral-matrix/"
   },
   {
     "topicName": "Arrays",
@@ -646,7 +661,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 16,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/pascals-triangle-ii/"
   },
   {
     "topicName": "Arrays",
@@ -657,7 +673,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 17,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/pascals-triangle-ii/"
   },
   {
     "topicName": "Arrays",
@@ -668,7 +685,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 18,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/pascals-triangle-ii/"
   },
   {
     "topicName": "Arrays",
@@ -679,7 +697,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 19,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/rotate-image/"
   },
   {
     "topicName": "Arrays",
@@ -690,7 +709,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 20,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/two-sum/"
   },
   {
     "topicName": "Arrays",
@@ -701,7 +721,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 21,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/3sum/"
   },
   {
     "topicName": "Arrays",
@@ -712,7 +733,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 22,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/4sum/"
   },
   {
     "topicName": "Arrays",
@@ -734,7 +756,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 24,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
   },
   {
     "topicName": "Arrays",
@@ -745,7 +768,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 25,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/next-permutation/"
   },
   {
     "topicName": "Arrays",
@@ -756,7 +780,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 26,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/majority-element/"
   },
   {
     "topicName": "Arrays",
@@ -789,7 +814,8 @@
     "targetWeek": 1,
     "targetPhase": 1,
     "orderInStep": 29,
-    "sheetStep": 7
+    "sheetStep": 7,
+    "url": "https://leetcode.com/problems/reverse-pairs/"
   },
   {
     "topicName": "Arrays",
@@ -811,7 +837,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 1,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/binary-search/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -844,7 +871,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 4,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/search-insert-position/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -866,7 +894,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 6,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -877,7 +906,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 7,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -888,7 +918,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 8,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -899,7 +930,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 9,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -932,7 +964,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 12,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/sqrtx/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -965,7 +998,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 15,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/koko-eating-bananas/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1009,7 +1043,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 19,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/find-peak-element/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1020,7 +1055,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 20,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1042,7 +1078,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 22,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1053,7 +1090,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 23,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/split-array-largest-sum/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1075,7 +1113,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 25,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/search-a-2d-matrix/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1097,7 +1136,8 @@
     "targetWeek": 3,
     "targetPhase": 1,
     "orderInStep": 27,
-    "sheetStep": 8
+    "sheetStep": 8,
+    "url": "https://leetcode.com/problems/find-peak-element/"
   },
   {
     "topicName": "Binary Search [Fundamentals, On Answers, 2D Arrays]",
@@ -1152,7 +1192,8 @@
     "targetWeek": 4,
     "targetPhase": 1,
     "orderInStep": 2,
-    "sheetStep": 9
+    "sheetStep": 9,
+    "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
   },
   {
     "topicName": "Hashing",
@@ -1163,7 +1204,8 @@
     "targetWeek": 4,
     "targetPhase": 1,
     "orderInStep": 3,
-    "sheetStep": 9
+    "sheetStep": 9,
+    "url": "https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/"
   },
   {
     "topicName": "Hashing",
@@ -1174,7 +1216,8 @@
     "targetWeek": 4,
     "targetPhase": 1,
     "orderInStep": 4,
-    "sheetStep": 9
+    "sheetStep": 9,
+    "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
   },
   {
     "topicName": "Hashing",
@@ -1229,7 +1272,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 1,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/powx-n/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1240,7 +1284,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 2,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/generate-parentheses/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1251,7 +1296,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 3,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/subsets/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1284,7 +1330,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 6,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/combination-sum/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1295,7 +1342,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 7,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/combination-sum/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1306,7 +1354,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 8,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/subsets-ii/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1317,7 +1366,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 9,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/subsets-ii/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1328,7 +1378,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 10,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/combination-sum/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1339,7 +1390,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 11,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1350,7 +1402,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 12,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/palindrome-partitioning/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1361,7 +1414,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 13,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/word-search/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1372,7 +1426,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 14,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/n-queens/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1405,7 +1460,8 @@
     "targetWeek": 5,
     "targetPhase": 2,
     "orderInStep": 17,
-    "sheetStep": 10
+    "sheetStep": 10,
+    "url": "https://leetcode.com/problems/sudoku-solver/"
   },
   {
     "topicName": "Recursion [PatternWise]",
@@ -1702,7 +1758,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 25,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/add-two-numbers/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1735,7 +1792,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 28,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1746,7 +1804,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 29,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/reverse-linked-list/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1801,7 +1860,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 34,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/intersection-of-two-linked-lists/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1845,7 +1905,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 38,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1867,7 +1928,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 40,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1878,7 +1940,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 41,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1900,7 +1963,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 43,
-    "sheetStep": 11
+    "sheetStep": 11,
+    "url": "https://leetcode.com/problems/copy-list-with-random-pointer/"
   },
   {
     "topicName": "Linked List [Single LL, Doubly LL]",
@@ -1955,7 +2019,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 2,
-    "sheetStep": 12
+    "sheetStep": 12,
+    "url": "https://leetcode.com/problems/minimum-bit-flips-to-convert-number/"
   },
   {
     "topicName": "Bit Manipulation",
@@ -1966,7 +2031,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 3,
-    "sheetStep": 12
+    "sheetStep": 12,
+    "url": "https://leetcode.com/problems/single-number-iii/"
   },
   {
     "topicName": "Bit Manipulation",
@@ -1977,7 +2043,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 4,
-    "sheetStep": 12
+    "sheetStep": 12,
+    "url": "https://leetcode.com/problems/single-number-iii/"
   },
   {
     "topicName": "Bit Manipulation",
@@ -1988,7 +2055,8 @@
     "targetWeek": 6,
     "targetPhase": 2,
     "orderInStep": 5,
-    "sheetStep": 12
+    "sheetStep": 12,
+    "url": "https://leetcode.com/problems/single-number-iii/"
   },
   {
     "topicName": "Bit Manipulation",
@@ -2043,7 +2111,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 1,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/assign-cookies/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2054,7 +2123,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 2,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/lemonade-change/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2065,7 +2135,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 3,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/jump-game/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2109,7 +2180,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 7,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/non-overlapping-intervals/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2120,7 +2192,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 8,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/insert-interval/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2142,7 +2215,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 10,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/valid-parentheses/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2153,7 +2227,8 @@
     "targetWeek": 7,
     "targetPhase": 2,
     "orderInStep": 11,
-    "sheetStep": 13
+    "sheetStep": 13,
+    "url": "https://leetcode.com/problems/candy/"
   },
   {
     "topicName": "Greedy Algorithms",
@@ -2186,7 +2261,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 2,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2197,7 +2273,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 3,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2208,7 +2285,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 4,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/max-consecutive-ones-iii/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2219,7 +2297,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 5,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/fruit-into-baskets/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2230,7 +2309,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 6,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2241,7 +2321,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 7,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2252,7 +2333,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 8,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/minimum-window-substring/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2263,7 +2345,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 9,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2274,7 +2357,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 10,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/binary-subarrays-with-sum/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2285,7 +2369,8 @@
     "targetWeek": 8,
     "targetPhase": 2,
     "orderInStep": 11,
-    "sheetStep": 14
+    "sheetStep": 14,
+    "url": "https://leetcode.com/problems/count-number-of-nice-subarrays/"
   },
   {
     "topicName": "Sliding Window / 2 Pointer",
@@ -2340,7 +2425,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 4,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/implement-stack-using-queues/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2351,7 +2437,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 5,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/implement-queue-using-stacks/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2395,7 +2482,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 9,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/next-greater-element-i/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2406,7 +2494,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 10,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/next-greater-element-ii/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2417,7 +2506,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 11,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/asteroid-collision/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2428,7 +2518,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 12,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/sum-of-subarray-minimums/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2439,7 +2530,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 13,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/sum-of-subarray-ranges/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2450,7 +2542,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 14,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/remove-k-digits/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2461,7 +2554,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 15,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/min-stack/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2472,7 +2566,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 16,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/sliding-window-maximum/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2483,7 +2578,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 17,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/trapping-rain-water/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2538,7 +2634,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 22,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/lru-cache/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2549,7 +2646,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 23,
-    "sheetStep": 15
+    "sheetStep": 15,
+    "url": "https://leetcode.com/problems/lfu-cache/"
   },
   {
     "topicName": "Stack / Queues [Implementation, Monotonic Stack]",
@@ -2637,7 +2735,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 7,
-    "sheetStep": 16
+    "sheetStep": 16,
+    "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
   },
   {
     "topicName": "Binary Trees [Traversals, Medium and Hard Problems]",
@@ -2670,7 +2769,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 10,
-    "sheetStep": 16
+    "sheetStep": 16,
+    "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
   },
   {
     "topicName": "Binary Trees [Traversals, Medium and Hard Problems]",
@@ -2868,7 +2968,8 @@
     "targetWeek": 9,
     "targetPhase": 2,
     "orderInStep": 28,
-    "sheetStep": 16
+    "sheetStep": 16,
+    "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
   },
   {
     "topicName": "Binary Trees [Traversals, Medium and Hard Problems]",
@@ -2923,7 +3024,8 @@
     "targetWeek": 10,
     "targetPhase": 3,
     "orderInStep": 2,
-    "sheetStep": 17
+    "sheetStep": 17,
+    "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
   },
   {
     "topicName": "Binary Search Trees",
@@ -2967,7 +3069,8 @@
     "targetWeek": 10,
     "targetPhase": 3,
     "orderInStep": 6,
-    "sheetStep": 17
+    "sheetStep": 17,
+    "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
   },
   {
     "topicName": "Binary Search Trees",
@@ -2989,7 +3092,8 @@
     "targetWeek": 10,
     "targetPhase": 3,
     "orderInStep": 8,
-    "sheetStep": 17
+    "sheetStep": 17,
+    "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
   },
   {
     "topicName": "Binary Search Trees",
@@ -3165,7 +3269,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 9,
-    "sheetStep": 18
+    "sheetStep": 18,
+    "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
   },
   {
     "topicName": "Heaps",
@@ -3231,7 +3336,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 4,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-provinces/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3242,7 +3348,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 5,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-islands/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3264,7 +3371,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 7,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-enclaves/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3275,7 +3383,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 8,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/rotting-oranges/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3297,7 +3406,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 10,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/surrounded-regions/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3308,7 +3418,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 11,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-distinct-islands-ii/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3374,7 +3485,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 17,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/course-schedule/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3385,7 +3497,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 18,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/find-eventual-safe-states/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3396,7 +3509,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 19,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/alien-dictionary/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3407,7 +3521,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 20,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/word-ladder/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3418,7 +3533,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 21,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/word-ladder/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3462,7 +3578,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 25,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3473,7 +3590,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 26,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3484,7 +3602,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 27,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3539,7 +3658,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 32,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3550,7 +3670,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 33,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/accounts-merge/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3572,7 +3693,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 35,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/making-a-large-island/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3583,7 +3705,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 36,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3605,7 +3728,8 @@
     "targetWeek": 12,
     "targetPhase": 3,
     "orderInStep": 38,
-    "sheetStep": 19
+    "sheetStep": 19,
+    "url": "https://leetcode.com/problems/critical-connections-in-a-network/"
   },
   {
     "topicName": "Graphs [Traversal, Shortest Path, MST, Additional]",
@@ -3759,7 +3883,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 2,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/climbing-stairs/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3770,7 +3895,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 3,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/frog-jump-ii/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3803,7 +3929,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 6,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/house-robber/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3825,7 +3952,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 8,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/unique-paths/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3836,7 +3964,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 9,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/unique-paths/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3847,7 +3976,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 10,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/minimum-falling-path-sum/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3858,7 +3988,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 11,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/triangle/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3869,7 +4000,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 12,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/cherry-pickup-ii/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3880,7 +4012,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 13,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3891,7 +4024,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 14,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3902,7 +4036,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 15,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3913,7 +4048,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 16,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3924,7 +4060,8 @@
     "targetWeek": 12,
     "targetPhase": 4,
     "orderInStep": 17,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -3946,7 +4083,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 19,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/partition-equal-subset-sum/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4012,7 +4150,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 25,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/target-sum/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4023,7 +4162,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 26,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/coin-change/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4056,7 +4196,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 29,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4067,7 +4208,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 30,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence-ii/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4078,7 +4220,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 31,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/largest-divisible-subset/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4089,7 +4232,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 32,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/longest-string-chain/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4111,7 +4255,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 34,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4122,7 +4267,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 35,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/longest-common-subsequence/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4144,7 +4290,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 37,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/longest-palindromic-subsequence/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4177,7 +4324,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 40,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/shortest-common-supersequence/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4188,7 +4336,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 41,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/distinct-subsequences/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4199,7 +4348,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 42,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/edit-distance/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4210,7 +4360,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 43,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/wildcard-matching/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4243,7 +4394,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 46,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/burst-balloons/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4254,7 +4406,8 @@
     "targetWeek": 13,
     "targetPhase": 4,
     "orderInStep": 47,
-    "sheetStep": 20
+    "sheetStep": 20,
+    "url": "https://leetcode.com/problems/palindrome-partitioning/"
   },
   {
     "topicName": "Dynamic Programming [1D, 2D, Subsequences, LIS, Strings, MCM]",
@@ -4430,7 +4583,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 3,
-    "sheetStep": 21
+    "sheetStep": 21,
+    "url": "https://leetcode.com/problems/longest-word-with-all-prefixes/"
   },
   {
     "topicName": "Tries",
@@ -4441,7 +4595,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 4,
-    "sheetStep": 21
+    "sheetStep": 21,
+    "url": "https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/"
   },
   {
     "topicName": "Tries",
@@ -4452,7 +4607,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 5,
-    "sheetStep": 21
+    "sheetStep": 21,
+    "url": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/"
   },
   {
     "topicName": "Tries",
@@ -4507,7 +4663,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 3,
-    "sheetStep": 22
+    "sheetStep": 22,
+    "url": "https://leetcode.com/problems/count-and-say/"
   },
   {
     "topicName": "Strings (Advanced Algo)",
@@ -4551,7 +4708,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 7,
-    "sheetStep": 22
+    "sheetStep": 22,
+    "url": "https://leetcode.com/problems/shortest-palindrome/"
   },
   {
     "topicName": "Strings (Advanced Algo)",
@@ -4562,7 +4720,8 @@
     "targetWeek": 14,
     "targetPhase": 4,
     "orderInStep": 8,
-    "sheetStep": 22
+    "sheetStep": 22,
+    "url": "https://leetcode.com/problems/longest-happy-prefix/"
   },
   {
     "topicName": "Strings (Advanced Algo)",
@@ -4793,7 +4952,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 1,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/contains-duplicate/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4804,7 +4964,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 2,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/product-of-array-except-self/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4815,7 +4976,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 3,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/group-anagrams/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4826,7 +4988,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 4,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/top-k-frequent-elements/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4837,7 +5000,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 5,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/encode-and-decode-strings/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4848,7 +5012,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 6,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/container-with-most-water/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4859,7 +5024,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 7,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/merge-intervals/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4870,7 +5036,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 8,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/meeting-rooms/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4881,7 +5048,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 9,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/set-matrix-zeroes/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4892,7 +5060,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 10,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/permutation-in-string/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4903,7 +5072,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 11,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/decode-string/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4914,7 +5084,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 12,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4925,7 +5096,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 13,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/daily-temperatures/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4936,7 +5108,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 14,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/longest-valid-parentheses/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4947,7 +5120,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 15,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/reorder-list/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4958,7 +5132,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 16,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/swap-nodes-in-pairs/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4969,7 +5144,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 17,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/invert-binary-tree/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4980,7 +5156,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 18,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/same-tree/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -4991,7 +5168,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 19,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/subtree-of-another-tree/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5002,7 +5180,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 20,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/binary-tree-right-side-view/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5013,7 +5192,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 21,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/clone-graph/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5024,7 +5204,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 22,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5035,7 +5216,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 23,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5046,7 +5228,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 24,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/redundant-connection/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5057,7 +5240,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 25,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/graph-valid-tree/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5068,7 +5252,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 26,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/network-delay-time/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5079,7 +5264,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 27,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5090,7 +5276,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 28,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/jump-game/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5101,7 +5288,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 29,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/gas-station/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5112,7 +5300,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 30,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/partition-labels/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5123,7 +5312,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 31,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/word-break/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5134,7 +5324,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 32,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/decode-ways/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5145,7 +5336,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 33,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/house-robber/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5156,7 +5348,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 34,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/maximal-square/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5167,7 +5360,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 35,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/permutations/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5178,7 +5372,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 36,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/find-median-from-data-stream/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5189,7 +5384,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 37,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5200,7 +5396,8 @@
     "targetWeek": 11,
     "targetPhase": 3,
     "orderInStep": 38,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/task-scheduler/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5211,7 +5408,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 39,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/number-of-1-bits/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5222,7 +5420,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 40,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/counting-bits/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5233,7 +5432,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 41,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/reverse-bits/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5244,7 +5444,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 42,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/sum-of-two-integers/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5255,7 +5456,8 @@
     "targetWeek": 15,
     "targetPhase": 3,
     "orderInStep": 43,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5266,7 +5468,8 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 44,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/01-matrix/"
   },
   {
     "topicName": "FAANG OA Gap Pack [Blind75 / NeetCode / 2025-26 reports]",
@@ -5277,6 +5480,259 @@
     "targetWeek": 13,
     "targetPhase": 3,
     "orderInStep": 45,
-    "sheetStep": 24
+    "sheetStep": 24,
+    "url": "https://leetcode.com/problems/word-search/"
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Capacity to Ship Packages Within D Days",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 3,
+    "targetPhase": 2,
+    "orderInStep": 1,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+    "pattern": "Binary Search",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Sort Colors",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 4,
+    "targetPhase": 2,
+    "orderInStep": 2,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/sort-colors/",
+    "pattern": "Two Pointers",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Valid Triangle Number",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 5,
+    "targetPhase": 2,
+    "orderInStep": 3,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/valid-triangle-number/",
+    "pattern": "Two Pointers",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Maximum Sum of Distinct Subarrays With Length K",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 8,
+    "targetPhase": 2,
+    "orderInStep": 4,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/",
+    "pattern": "Sliding Window",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Binary Tree Zigzag Level Order Traversal",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 9,
+    "targetPhase": 2,
+    "orderInStep": 5,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+    "pattern": "BFS",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Path Sum",
+    "difficulty": "Easy",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 10,
+    "targetPhase": 4,
+    "orderInStep": 6,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/path-sum-iii/",
+    "pattern": "Trees",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Find K Closest Elements",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 11,
+    "targetPhase": 4,
+    "orderInStep": 7,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/find-k-closest-elements/",
+    "pattern": "Heap",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Path With Minimum Effort",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 12,
+    "targetPhase": 4,
+    "orderInStep": 8,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/path-with-minimum-effort/",
+    "pattern": "Graphs",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Path Sum II",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 10,
+    "targetPhase": 4,
+    "orderInStep": 9,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/path-sum-iii/",
+    "pattern": "Trees",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Binary Tree Tilt",
+    "difficulty": "Easy",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 9,
+    "targetPhase": 2,
+    "orderInStep": 10,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/binary-tree-tilt/",
+    "pattern": "Trees",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 11,
+    "targetPhase": 4,
+    "orderInStep": 11,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+    "pattern": "Heap",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Maximum Profit in Job Scheduling",
+    "difficulty": "Hard",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 13,
+    "targetPhase": 4,
+    "orderInStep": 12,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+    "pattern": "1D DP",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Kth Smallest Element in a Sorted Matrix",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 14,
+    "targetPhase": 4,
+    "orderInStep": 13,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+    "pattern": "Binary Search",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Paint House",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 13,
+    "targetPhase": 4,
+    "orderInStep": 14,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/paint-house-iii/",
+    "pattern": "1D DP",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Paint House II",
+    "difficulty": "Hard",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 14,
+    "targetPhase": 4,
+    "orderInStep": 15,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/paint-house-iii/",
+    "pattern": "1D DP",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Longest Univalue Path",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 15,
+    "targetPhase": 4,
+    "orderInStep": 16,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/longest-univalue-path/",
+    "pattern": "Trees",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Minimum Knight Moves",
+    "difficulty": "Medium",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 16,
+    "targetPhase": 4,
+    "orderInStep": 17,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/minimum-knight-moves/",
+    "pattern": "BFS",
+    "isCore": true
+  },
+  {
+    "topicName": "College Gap Pack (LC missing)",
+    "name": "Bus Routes",
+    "difficulty": "Hard",
+    "status": "Todo",
+    "track": "both",
+    "targetWeek": 17,
+    "targetPhase": 4,
+    "orderInStep": 18,
+    "sheetStep": 25,
+    "url": "https://leetcode.com/problems/bus-routes/",
+    "pattern": "BFS",
+    "isCore": true
   }
 ]

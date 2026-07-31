@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import {
-  Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag, LogOut, Menu, X, Swords
+  Home, Calendar as CalendarIcon, Bell, Code, Briefcase, Inbox, Flag, LogOut, Menu, X, Swords, Megaphone
 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -13,6 +13,7 @@ import Applications from './pages/Applications';
 import Notifications from './pages/Notifications';
 import Checkpoints from './pages/Checkpoints';
 import Dojo from './pages/Dojo';
+import Notices from './pages/Notices';
 import LoginGate from './pages/LoginGate';
 import { useAlertsSocket } from './hooks/useAlertsSocket';
 import { checkAuthStatus, clearToken, getToken } from './api/auth';
@@ -23,6 +24,7 @@ const NAV = [
   { to: '/checkpoints', label: 'Checkpoints', icon: Flag },
   { to: '/dsa', label: 'DSA Tracker', icon: Code },
   { to: '/dojo', label: 'Dojo', icon: Swords },
+  { to: '/notices', label: 'Notices', icon: Megaphone },
   { to: '/alerts', label: 'Alerts', icon: Bell, badge: true },
   { to: '/applications', label: 'Applications', icon: Briefcase },
   { to: '/notifications', label: 'Notifications', icon: Inbox, badge: true }
@@ -221,6 +223,7 @@ function App() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/dsa" element={<DSATracker />} />
           <Route path="/dojo" element={<Dojo />} />
+          <Route path="/notices" element={<Notices />} />
         </Routes>
       </Layout>
       <Toaster position="bottom-center" containerStyle={{ bottom: 16 }} />

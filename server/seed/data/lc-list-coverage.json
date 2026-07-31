@@ -1,0 +1,489 @@
+{
+  "sheetSize": 480,
+  "summary": {
+    "present": 100,
+    "missing": 30,
+    "notOnLCOrCustom": 4,
+    "totalWithLCNumber": 130,
+    "coveragePct": 77
+  },
+  "byTopic": [
+    {
+      "topic": "Binary Search",
+      "present": 6,
+      "missing": 2,
+      "totalLC": 8,
+      "misses": [
+        {
+          "id": 378,
+          "title": "Kth Smallest in a Sorted Matrix",
+          "slug": "kth-smallest-element-in-a-sorted-matrix"
+        },
+        {
+          "id": 1011,
+          "title": "Minimum Shipping Capacity",
+          "slug": "capacity-to-ship-packages-within-d-days"
+        }
+      ]
+    },
+    {
+      "topic": "Two Pointers",
+      "present": 5,
+      "missing": 3,
+      "totalLC": 8,
+      "misses": [
+        {
+          "id": 125,
+          "title": "Valid Palindrome",
+          "slug": "valid-palindrome"
+        },
+        {
+          "id": 611,
+          "title": "Valid Triangle Number",
+          "slug": "valid-triangle-number"
+        },
+        {
+          "id": 75,
+          "title": "Sort Colors",
+          "slug": "sort-colors"
+        }
+      ]
+    },
+    {
+      "topic": "Arrays & Hashing",
+      "present": 8,
+      "missing": 0,
+      "totalLC": 8,
+      "misses": []
+    },
+    {
+      "topic": "Sliding Window",
+      "present": 6,
+      "missing": 1,
+      "totalLC": 7,
+      "misses": [
+        {
+          "id": 2461,
+          "title": "Max Sum of Distinct Subarrays, Size K",
+          "slug": "maximum-sum-of-distinct-subarrays-with-length-k"
+        }
+      ]
+    },
+    {
+      "topic": "Stack",
+      "present": 6,
+      "missing": 1,
+      "totalLC": 7,
+      "misses": [
+        {
+          "id": 84,
+          "title": "Largest Rectangle in Histogram",
+          "slug": "largest-rectangle-in-histogram"
+        }
+      ]
+    },
+    {
+      "topic": "Linked List",
+      "present": 7,
+      "missing": 2,
+      "totalLC": 9,
+      "misses": [
+        {
+          "id": 141,
+          "title": "Linked List Cycle",
+          "slug": "linked-list-cycle"
+        },
+        {
+          "id": 234,
+          "title": "Palindrome Linked List",
+          "slug": "palindrome-linked-list"
+        }
+      ]
+    },
+    {
+      "topic": "Heap",
+      "present": 4,
+      "missing": 2,
+      "totalLC": 6,
+      "misses": [
+        {
+          "id": 658,
+          "title": "Find K Closest Elements",
+          "slug": "find-k-closest-elements"
+        },
+        {
+          "id": 23,
+          "title": "Merge K Sorted Lists",
+          "slug": "merge-k-sorted-lists"
+        }
+      ]
+    },
+    {
+      "topic": "Trees / DFS",
+      "present": 5,
+      "missing": 7,
+      "totalLC": 12,
+      "misses": [
+        {
+          "id": 112,
+          "title": "Path Sum",
+          "slug": "path-sum"
+        },
+        {
+          "id": 98,
+          "title": "Validate Binary Search Tree",
+          "slug": "validate-binary-search-tree"
+        },
+        {
+          "id": 563,
+          "title": "Binary Tree Tilt",
+          "slug": "binary-tree-tilt"
+        },
+        {
+          "id": 113,
+          "title": "Path Sum II",
+          "slug": "path-sum-ii"
+        },
+        {
+          "id": 687,
+          "title": "Longest Univalue Path",
+          "slug": "longest-univalue-path"
+        },
+        {
+          "id": 236,
+          "title": "Lowest Common Ancestor of a Binary Tree",
+          "slug": "lowest-common-ancestor-of-a-binary-tree"
+        },
+        {
+          "id": 124,
+          "title": "Binary Tree Maximum Path Sum",
+          "slug": "binary-tree-maximum-path-sum"
+        }
+      ]
+    },
+    {
+      "topic": "Graphs (DFS)",
+      "present": 5,
+      "missing": 1,
+      "totalLC": 6,
+      "misses": [
+        {
+          "id": 733,
+          "title": "Flood Fill",
+          "slug": "flood-fill"
+        }
+      ]
+    },
+    {
+      "topic": "Greedy",
+      "present": 5,
+      "missing": 0,
+      "totalLC": 5,
+      "misses": []
+    },
+    {
+      "topic": "Dynamic Programming",
+      "present": 11,
+      "missing": 4,
+      "totalLC": 15,
+      "misses": [
+        {
+          "id": 53,
+          "title": "Maximum Subarray",
+          "slug": "maximum-subarray"
+        },
+        {
+          "id": 1235,
+          "title": "Maximum Profit in Job Scheduling",
+          "slug": "maximum-profit-in-job-scheduling"
+        },
+        {
+          "id": 256,
+          "title": "Paint House",
+          "slug": "paint-house"
+        },
+        {
+          "id": 265,
+          "title": "Paint House II",
+          "slug": "paint-house-ii"
+        }
+      ]
+    },
+    {
+      "topic": "Graphs (algorithms)",
+      "present": 7,
+      "missing": 2,
+      "totalLC": 9,
+      "misses": [
+        {
+          "id": 210,
+          "title": "Course Schedule II",
+          "slug": "course-schedule-ii"
+        },
+        {
+          "id": 1631,
+          "title": "Path With Minimum Effort",
+          "slug": "path-with-minimum-effort"
+        }
+      ]
+    },
+    {
+      "topic": "Backtracking",
+      "present": 8,
+      "missing": 0,
+      "totalLC": 8,
+      "misses": []
+    },
+    {
+      "topic": "BFS",
+      "present": 3,
+      "missing": 4,
+      "totalLC": 7,
+      "misses": [
+        {
+          "id": 103,
+          "title": "Zigzag Level Order",
+          "slug": "binary-tree-zigzag-level-order-traversal"
+        },
+        {
+          "id": 662,
+          "title": "Maximum Width of Binary Tree",
+          "slug": "maximum-width-of-binary-tree"
+        },
+        {
+          "id": 1197,
+          "title": "Minimum Knight Moves",
+          "slug": "minimum-knight-moves"
+        },
+        {
+          "id": 815,
+          "title": "Bus Routes",
+          "slug": "bus-routes"
+        }
+      ]
+    },
+    {
+      "topic": "Trie",
+      "present": 0,
+      "missing": 1,
+      "totalLC": 1,
+      "misses": [
+        {
+          "id": 208,
+          "title": "Implement Trie Methods",
+          "slug": "implement-trie-prefix-tree"
+        }
+      ]
+    },
+    {
+      "topic": "Prefix Sum",
+      "present": 1,
+      "missing": 0,
+      "totalLC": 1,
+      "misses": []
+    },
+    {
+      "topic": "Matrices",
+      "present": 3,
+      "missing": 0,
+      "totalLC": 3,
+      "misses": []
+    },
+    {
+      "topic": "Intervals",
+      "present": 5,
+      "missing": 0,
+      "totalLC": 5,
+      "misses": []
+    },
+    {
+      "topic": "Bit Manipulation",
+      "present": 5,
+      "missing": 0,
+      "totalLC": 5,
+      "misses": []
+    }
+  ],
+  "missingAll": [
+    {
+      "topic": "Binary Search",
+      "id": 378,
+      "title": "Kth Smallest in a Sorted Matrix",
+      "slug": "kth-smallest-element-in-a-sorted-matrix"
+    },
+    {
+      "topic": "Binary Search",
+      "id": 1011,
+      "title": "Minimum Shipping Capacity",
+      "slug": "capacity-to-ship-packages-within-d-days"
+    },
+    {
+      "topic": "Two Pointers",
+      "id": 125,
+      "title": "Valid Palindrome",
+      "slug": "valid-palindrome"
+    },
+    {
+      "topic": "Two Pointers",
+      "id": 611,
+      "title": "Valid Triangle Number",
+      "slug": "valid-triangle-number"
+    },
+    {
+      "topic": "Two Pointers",
+      "id": 75,
+      "title": "Sort Colors",
+      "slug": "sort-colors"
+    },
+    {
+      "topic": "Sliding Window",
+      "id": 2461,
+      "title": "Max Sum of Distinct Subarrays, Size K",
+      "slug": "maximum-sum-of-distinct-subarrays-with-length-k"
+    },
+    {
+      "topic": "Stack",
+      "id": 84,
+      "title": "Largest Rectangle in Histogram",
+      "slug": "largest-rectangle-in-histogram"
+    },
+    {
+      "topic": "Linked List",
+      "id": 141,
+      "title": "Linked List Cycle",
+      "slug": "linked-list-cycle"
+    },
+    {
+      "topic": "Linked List",
+      "id": 234,
+      "title": "Palindrome Linked List",
+      "slug": "palindrome-linked-list"
+    },
+    {
+      "topic": "Heap",
+      "id": 658,
+      "title": "Find K Closest Elements",
+      "slug": "find-k-closest-elements"
+    },
+    {
+      "topic": "Heap",
+      "id": 23,
+      "title": "Merge K Sorted Lists",
+      "slug": "merge-k-sorted-lists"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 112,
+      "title": "Path Sum",
+      "slug": "path-sum"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 98,
+      "title": "Validate Binary Search Tree",
+      "slug": "validate-binary-search-tree"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 563,
+      "title": "Binary Tree Tilt",
+      "slug": "binary-tree-tilt"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 113,
+      "title": "Path Sum II",
+      "slug": "path-sum-ii"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 687,
+      "title": "Longest Univalue Path",
+      "slug": "longest-univalue-path"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 236,
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "slug": "lowest-common-ancestor-of-a-binary-tree"
+    },
+    {
+      "topic": "Trees / DFS",
+      "id": 124,
+      "title": "Binary Tree Maximum Path Sum",
+      "slug": "binary-tree-maximum-path-sum"
+    },
+    {
+      "topic": "Graphs (DFS)",
+      "id": 733,
+      "title": "Flood Fill",
+      "slug": "flood-fill"
+    },
+    {
+      "topic": "Dynamic Programming",
+      "id": 53,
+      "title": "Maximum Subarray",
+      "slug": "maximum-subarray"
+    },
+    {
+      "topic": "Dynamic Programming",
+      "id": 1235,
+      "title": "Maximum Profit in Job Scheduling",
+      "slug": "maximum-profit-in-job-scheduling"
+    },
+    {
+      "topic": "Dynamic Programming",
+      "id": 256,
+      "title": "Paint House",
+      "slug": "paint-house"
+    },
+    {
+      "topic": "Dynamic Programming",
+      "id": 265,
+      "title": "Paint House II",
+      "slug": "paint-house-ii"
+    },
+    {
+      "topic": "Graphs (algorithms)",
+      "id": 210,
+      "title": "Course Schedule II",
+      "slug": "course-schedule-ii"
+    },
+    {
+      "topic": "Graphs (algorithms)",
+      "id": 1631,
+      "title": "Path With Minimum Effort",
+      "slug": "path-with-minimum-effort"
+    },
+    {
+      "topic": "BFS",
+      "id": 103,
+      "title": "Zigzag Level Order",
+      "slug": "binary-tree-zigzag-level-order-traversal"
+    },
+    {
+      "topic": "BFS",
+      "id": 662,
+      "title": "Maximum Width of Binary Tree",
+      "slug": "maximum-width-of-binary-tree"
+    },
+    {
+      "topic": "BFS",
+      "id": 1197,
+      "title": "Minimum Knight Moves",
+      "slug": "minimum-knight-moves"
+    },
+    {
+      "topic": "BFS",
+      "id": 815,
+      "title": "Bus Routes",
+      "slug": "bus-routes"
+    },
+    {
+      "topic": "Trie",
+      "id": 208,
+      "title": "Implement Trie Methods",
+      "slug": "implement-trie-prefix-tree"
+    }
+  ]
+}

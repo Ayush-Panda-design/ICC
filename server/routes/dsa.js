@@ -60,7 +60,7 @@ function applyHardnessGate(body, problem) {
   };
 }
 
-// GET /api/dsa?track=startup_service|faang|full|week|core|revisit|google_hard|pattern
+// GET /api/dsa?track=startup_service|faang|full|week|core|revisit|google_hard|leetcode|pattern
 router.get('/', async (req, res) => {
   try {
     const track = req.query.track || 'full';
@@ -71,6 +71,7 @@ router.get('/', async (req, res) => {
     let problems = await DSAProblem.find().sort({ sheetStep: 1, orderInStep: 1 });
     const allProblems = problems;
     const TOTAL = allProblems.length; // full TUF+ (+ any OA gap rows) — never invent a lower ceiling
+    const isLeetCode = (p) => p.url && /leetcode\.com\/problems\//i.test(p.url);
 
     if (track === 'startup_service') {
       problems = problems.filter((p) => p.track === 'startup_service' || p.track === 'both');
@@ -93,6 +94,8 @@ router.get('/', async (req, res) => {
       );
     } else if (track === 'google_hard') {
       problems = problems.filter((p) => p.googleHard);
+    } else if (track === 'leetcode') {
+      problems = problems.filter(isLeetCode);
     } else if (track === 'pattern' && patternFilter) {
       const pf = patternFilter.toLowerCase();
       problems = problems.filter((p) => (p.pattern || '').toLowerCase().includes(pf));
@@ -105,6 +108,8 @@ router.get('/', async (req, res) => {
     const coreDone = coreSet.filter((p) => p.status === 'Done').length;
     const googleSet = allProblems.filter((p) => p.googleHard);
     const googleDone = googleSet.filter((p) => p.status === 'Done').length;
+    const leetcodeSet = allProblems.filter(isLeetCode);
+    const leetcodeDone = leetcodeSet.filter((p) => p.status === 'Done').length;
     const revisitDue = allProblems.filter(
       (p) => p.status === 'Revisit' || (p.nextReviewAt && p.nextReviewAt <= new Date())
     ).length;
@@ -170,6 +175,11 @@ router.get('/', async (req, res) => {
           done: googleDone,
           total: googleSet.length,
           percentage: googleSet.length ? Math.round((googleDone / googleSet.length) * 100) : 0
+        },
+        leetcodeTrack: {
+          done: leetcodeDone,
+          total: leetcodeSet.length,
+          percentage: leetcodeSet.length ? Math.round((leetcodeDone / leetcodeSet.length) * 100) : 0
         },
         revisitDue,
         currentWeek: weekNum,

@@ -1,0 +1,185 @@
+[
+  {
+    "name": "Capacity to Ship Packages Within D Days",
+    "lc": 1011,
+    "difficulty": "Medium",
+    "pattern": "Binary Search",
+    "slug": "capacity-to-ship-packages-within-d-days",
+    "scheduleWeek": 3,
+    "scheduleDow": "Sat",
+    "why": "BS-on-answers classic; pairs with Koko / Book Allocation week"
+  },
+  {
+    "name": "Sort Colors",
+    "lc": 75,
+    "difficulty": "Medium",
+    "pattern": "Two Pointers",
+    "slug": "sort-colors",
+    "scheduleWeek": 4,
+    "scheduleDow": "Sat",
+    "why": "Dutch national flag — quick array pattern gap"
+  },
+  {
+    "name": "Valid Triangle Number",
+    "lc": 611,
+    "difficulty": "Medium",
+    "pattern": "Two Pointers",
+    "slug": "valid-triangle-number",
+    "scheduleWeek": 5,
+    "scheduleDow": "Sat",
+    "why": "Two-pointer after sort; light weekend add-on"
+  },
+  {
+    "name": "Maximum Sum of Distinct Subarrays With Length K",
+    "lc": 2461,
+    "difficulty": "Medium",
+    "pattern": "Sliding Window",
+    "slug": "maximum-sum-of-distinct-subarrays-with-length-k",
+    "scheduleWeek": 8,
+    "scheduleDow": "Sat",
+    "why": "Fixed window + distinct set; fits SW week"
+  },
+  {
+    "name": "Binary Tree Zigzag Level Order Traversal",
+    "lc": 103,
+    "difficulty": "Medium",
+    "pattern": "BFS",
+    "slug": "binary-tree-zigzag-level-order-traversal",
+    "scheduleWeek": 9,
+    "scheduleDow": "Sat",
+    "why": "BFS variant of level order — one extra on tree week"
+  },
+  {
+    "name": "Path Sum",
+    "lc": 112,
+    "difficulty": "Easy",
+    "pattern": "Trees",
+    "slug": "path-sum",
+    "scheduleWeek": 10,
+    "scheduleDow": "Sat",
+    "why": "Easy tree DFS; college-friendly Saturday"
+  },
+  {
+    "name": "Find K Closest Elements",
+    "lc": 658,
+    "difficulty": "Medium",
+    "pattern": "Heap",
+    "slug": "find-k-closest-elements",
+    "scheduleWeek": 11,
+    "scheduleDow": "Sat",
+    "why": "Heap / binary-search hybrid during heaps week"
+  },
+  {
+    "name": "Path With Minimum Effort",
+    "lc": 1631,
+    "difficulty": "Medium",
+    "pattern": "Graphs",
+    "slug": "path-with-minimum-effort",
+    "scheduleWeek": 12,
+    "scheduleDow": "Sat",
+    "why": "Graph + binary search / Dijkstra family"
+  },
+  {
+    "name": "Path Sum II",
+    "lc": 113,
+    "difficulty": "Medium",
+    "pattern": "Trees",
+    "slug": "path-sum-ii",
+    "scheduleWeek": 10,
+    "scheduleDow": "Wed",
+    "why": "Follow-up to Path Sum — midweek single problem only"
+  },
+  {
+    "name": "Binary Tree Tilt",
+    "lc": 563,
+    "difficulty": "Easy",
+    "pattern": "Trees",
+    "slug": "binary-tree-tilt",
+    "scheduleWeek": 9,
+    "scheduleDow": "Wed",
+    "why": "Easy tree DFS; not stacked with mocks"
+  },
+  {
+    "name": "Merge k Sorted Lists",
+    "lc": 23,
+    "difficulty": "Hard",
+    "pattern": "Heap",
+    "slug": "merge-k-sorted-lists",
+    "scheduleWeek": 11,
+    "scheduleDow": "Wed",
+    "why": "One hard heap problem midweek — skip if exhausted"
+  },
+  {
+    "name": "Maximum Profit in Job Scheduling",
+    "lc": 1235,
+    "difficulty": "Hard",
+    "pattern": "1D DP",
+    "slug": "maximum-profit-in-job-scheduling",
+    "scheduleWeek": 13,
+    "scheduleDow": "Sat",
+    "why": "Advanced DP; Saturday only, after core DP week"
+  },
+  {
+    "name": "Kth Smallest Element in a Sorted Matrix",
+    "lc": 378,
+    "difficulty": "Medium",
+    "pattern": "Binary Search",
+    "slug": "kth-smallest-element-in-a-sorted-matrix",
+    "scheduleWeek": 14,
+    "scheduleDow": "Sat",
+    "why": "BS / heap matrix; light post-DP week"
+  },
+  {
+    "name": "Paint House",
+    "lc": 256,
+    "difficulty": "Medium",
+    "pattern": "1D DP",
+    "slug": "paint-house",
+    "scheduleWeek": 13,
+    "scheduleDow": "Wed",
+    "premium": true,
+    "why": "LC Premium — do if you have Premium; else skip"
+  },
+  {
+    "name": "Paint House II",
+    "lc": 265,
+    "difficulty": "Hard",
+    "pattern": "1D DP",
+    "slug": "paint-house-ii",
+    "scheduleWeek": 14,
+    "scheduleDow": "Wed",
+    "premium": true,
+    "why": "LC Premium hard — optional only"
+  },
+  {
+    "name": "Longest Univalue Path",
+    "lc": 687,
+    "difficulty": "Medium",
+    "pattern": "Trees",
+    "slug": "longest-univalue-path",
+    "scheduleWeek": 15,
+    "scheduleDow": "Sat",
+    "why": "Tree DFS during revision phase — one problem"
+  },
+  {
+    "name": "Minimum Knight Moves",
+    "lc": 1197,
+    "difficulty": "Medium",
+    "pattern": "BFS",
+    "slug": "minimum-knight-moves",
+    "scheduleWeek": 16,
+    "scheduleDow": "Sat",
+    "premium": true,
+    "why": "Premium BFS; skip if no Premium"
+  },
+  {
+    "name": "Bus Routes",
+    "lc": 815,
+    "difficulty": "Hard",
+    "pattern": "BFS",
+    "slug": "bus-routes",
+    "scheduleWeek": 17,
+    "scheduleDow": "Sat",
+    "why": "Hard BFS — one problem on mock week, only if energy left"
+  }
+]

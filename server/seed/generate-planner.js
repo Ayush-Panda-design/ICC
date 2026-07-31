@@ -409,7 +409,28 @@ function injectProgressAwareDsa(shiftedWeeks) {
   return shiftedWeeks;
 }
 
-const weeks = injectProgressAwareDsa(weeksShifted);
+/** Light college-pace gap: 1 LC missing problem on assigned Sat/Wed — never stacks into the daily 3. */
+function injectCollegeGapNotes(shiftedWeeks) {
+  const gapPath = path.join(__dirname, 'data', 'college-gap-pack.json');
+  if (!fs.existsSync(gapPath)) return shiftedWeeks;
+  const pack = JSON.parse(fs.readFileSync(gapPath, 'utf-8'));
+
+  for (const item of pack) {
+    const w = shiftedWeeks.find((x) => x.week === item.scheduleWeek);
+    if (!w) continue;
+    const prem = item.premium ? ' [Premium — skip if no LC Premium]' : '';
+    const line = `College gap (1 only): ${item.name} (LC ${item.lc})${prem}`;
+    let label = Object.keys(w.days).find((lab) => lab.startsWith(item.scheduleDow));
+    if (!label) label = Object.keys(w.days).find((lab) => lab.startsWith('Sat'));
+    if (!label) continue;
+    const raw = w.days[label];
+    if (raw.includes(item.name) || raw.includes(`LC ${item.lc}`)) continue;
+    w.days[label] = `${raw}. ${line}`;
+  }
+  return shiftedWeeks;
+}
+
+const weeks = injectCollegeGapNotes(injectProgressAwareDsa(weeksShifted));
 
 function extract(text, re) {
   const m = text.match(re);

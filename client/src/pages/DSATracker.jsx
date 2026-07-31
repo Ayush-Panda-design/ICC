@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   ChevronDown, ChevronRight, Search, CheckCircle, Circle, PlayCircle,
-  RefreshCw, Award, X, Flame
+  RefreshCw, Award, X, Flame, ExternalLink
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { apiFetch } from '../api/auth';
 
 const TRACKS = [
   { id: 'full', label: 'Full TUF+ (all)' },
-  { id: 'startup_service', label: 'Sep path' },
+  {
+    id: 'startup_service',
+    label: 'Startup / Service (by Sep)',
+    hint: 'All problems that clear DSA rounds at startups & service companies by ~Sep 28. Finish this set first — then keep going on Full TUF+ for product/FAANG.'
+  },
   { id: 'faang', label: 'FAANG path' },
   { id: 'core', label: 'OA / Core staples' },
+  {
+    id: 'leetcode',
+    label: 'LeetCode',
+    hint: 'Only problems that have a direct LeetCode link — click LeetCode to open that question.'
+  },
   { id: 'google_hard', label: 'Google Hard' },
   { id: 'revisit', label: 'Spaced revisit' },
   { id: 'week', label: 'This Week' }
@@ -32,7 +41,7 @@ const DSATracker = () => {
   const [stats, setStats] = useState(null);
   const [patterns, setPatterns] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [track, setTrack] = useState('full');
+  const [track, setTrack] = useState('startup_service');
   const [expandedTopics, setExpandedTopics] = useState({});
   const [search, setSearch] = useState('');
   const [gateModal, setGateModal] = useState(null); // { problem, nextStatus }
@@ -230,9 +239,19 @@ const DSATracker = () => {
                 {stats.easy?.done}/{stats.easy?.total} · {stats.medium?.done}/{stats.medium?.total} · {stats.hard?.done}/{stats.hard?.total}
               </p>
             </div>
-            <div className="card p-3">
-              <p className="text-xs text-text-muted">Sep path</p>
-              <p className="text-xl font-bold">{stats.sepTrack?.percentage || 0}%</p>
+            <div className={`card p-3 ${track === 'startup_service' ? 'ring-2 ring-accent-yellow' : ''}`}>
+              <p className="text-xs text-text-muted">Startup / Service (Sep)</p>
+              <p className="text-xl font-bold">
+                {stats.sepTrack?.percentage || 0}%
+                <span className="text-xs text-text-muted font-normal ml-1">
+                  {stats.sepTrack?.done}/{stats.sepTrack?.total}
+                </span>
+              </p>
+              {stats.interviewReady ? (
+                <p className="text-[10px] text-accent-green font-bold mt-0.5">DSA-round ready</p>
+              ) : (
+                <p className="text-[10px] text-text-muted mt-0.5">Target ~85% by Sep</p>
+              )}
             </div>
             <div className="card p-3">
               <p className="text-xs text-text-muted">OA / Core staples</p>
@@ -261,6 +280,7 @@ const DSATracker = () => {
               key={t.id}
               type="button"
               onClick={() => setTrack(t.id)}
+              title={t.hint || t.label}
               className={`px-3 py-1.5 text-sm font-medium rounded-lg border transition ${
                 track === t.id
                   ? 'bg-accent-yellow text-white border-accent-yellow'
@@ -268,6 +288,12 @@ const DSATracker = () => {
               }`}
             >
               {t.label}
+              {t.id === 'startup_service' && stats?.sepTrack?.total
+                ? ` · ${stats.sepTrack.done}/${stats.sepTrack.total}`
+                : ''}
+              {t.id === 'leetcode' && stats?.leetcodeTrack?.total != null
+                ? ` · ${stats.leetcodeTrack.total}`
+                : ''}
               {t.id === 'week' && stats?.currentWeek ? ` (W${stats.currentWeek})` : ''}
             </button>
           ))}
@@ -279,8 +305,32 @@ const DSATracker = () => {
             {showPatterns ? 'Hide patterns' : 'Pattern mastery'}
           </button>
         </div>
+        {track === 'startup_service' && (
+          <div className="rounded-lg border border-accent-yellow bg-accent-yellow-soft/40 px-3 py-2 text-sm">
+            <p className="font-bold text-text-primary">Startup &amp; service DSA set (plan → Sep)</p>
+            <p className="text-xs text-text-muted mt-0.5">
+              Showing {visibleCount} of {stats?.sepTrack?.total || '—'} problems tagged for startup/service interviews.
+              Hitting ~85% ({stats?.interviewReady ? 'you’re there' : `need ~${Math.ceil((stats?.sepTrack?.total || 0) * 0.85)} done`})
+              means you can crack typical startup/service DSA rounds — then continue Full TUF+ for product/FAANG.
+            </p>
+          </div>
+        )}
+        {track === 'leetcode' && (
+          <div className="rounded-lg border border-border bg-cream-card px-3 py-2 text-sm">
+            <p className="font-bold text-text-primary">
+              LeetCode-linked · {stats?.leetcodeTrack?.total || 0} problems
+            </p>
+            <p className="text-xs text-text-muted mt-0.5">
+              {stats?.leetcodeTrack?.done || 0} done · each row has a LeetCode button to that exact question.
+              Remaining sheet problems without a LC match are hidden in this filter.
+            </p>
+          </div>
+        )}
         <p className="text-xs text-text-muted">
           Showing {visibleCount} · Hardness gate on Done: time + complexity required; &gt;45 min or wrong approach → auto Revisit.
+          {stats?.leetcodeTrack?.total != null && track !== 'leetcode'
+            ? ` · ${stats.leetcodeTrack.total} have LeetCode links`
+            : ''}
         </p>
       </header>
 
@@ -379,6 +429,18 @@ const DSATracker = () => {
                       <span className={`text-xs px-2 py-0.5 rounded font-bold ${getDifficultyColor(problem.difficulty)}`}>
                         {problem.difficulty}
                       </span>
+                      {problem.url && /leetcode\.com\/problems\//i.test(problem.url) && (
+                        <a
+                          href={problem.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-lg border border-border bg-cream-card hover:border-accent-yellow hover:text-accent-yellow transition"
+                          title="Open this problem on LeetCode"
+                        >
+                          LeetCode <ExternalLink size={12} />
+                        </a>
+                      )}
                       <select
                         value={problem.status}
                         onChange={(e) => requestStatus(problem, e.target.value)}
